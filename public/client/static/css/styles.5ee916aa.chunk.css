@@ -1,0 +1,145 @@
+.box-question {
+  background: #fff; }
+  .box-question .content ul {
+    padding: 10px;
+    padding-left: 20px; }
+    .box-question .content ul li {
+      margin-bottom: 10px; }
+  .box-question .content .item-title {
+    font-size: 15px;
+    font-family: Roboto-bold;
+    text-transform: uppercase;
+    margin-bottom: 5px; }
+
+.swiper img {
+  width: 100%; }
+
+.modal-banner {
+  top: 5% !important;
+  width: 860px !important; }
+  .modal-banner .ant-modal-body {
+    font-size: 16px;
+    padding: 0;
+    font-family: Roboto;
+    color: #111; }
+    .modal-banner .ant-modal-body img {
+      width: 100%; }
+    .modal-banner .ant-modal-body .content-modal {
+      padding: 50px 60px;
+      padding-bottom: 100px;
+      position: relative; }
+    .modal-banner .ant-modal-body .btn-modal {
+      position: absolute;
+      font-size: 22px;
+      background: #ffd800;
+      border-radius: 25px;
+      border: 1px solid #f9d50b;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      padding: 3px 25px;
+      font-family: Roboto-bold;
+      box-shadow: 3px 3px 3px #ccc;
+      white-space: nowrap; }
+    .modal-banner .ant-modal-body .title1 {
+      font-size: 18px;
+      font-family: Roboto-bold; }
+    .modal-banner .ant-modal-body .title2 {
+      font-size: 17px;
+      font-style: italic; }
+    .modal-banner .ant-modal-body .text-stynext {
+      font-family: Roboto-bold; }
+    .modal-banner .ant-modal-body .text-stylist {
+      font-weight: bold; }
+    .modal-banner .ant-modal-body .header-jd {
+      font-size: 16px;
+      font-family: Roboto-bold;
+      margin-bottom: 5px; }
+
+.btn-modal-send {
+  position: absolute;
+  padding: 5px  20px;
+  font-size: 18px;
+  margin: auto;
+  color: #fff;
+  background: linear-gradient(#f37d1c, #920707);
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+  margin-top: 15px; }
+
+@media screen and (max-width: 768px) {
+  .modal-banner .ant-modal-body .btn-modal {
+    font-size: 4vw; }
+  .modal-banner .ant-modal-body .content-modal {
+    font-size: 14px;
+    padding: 30px 15px;
+    padding-bottom: 65px;
+    text-align: justify; }
+  .modal-banner .ant-modal-content .ant-modal-close .ant-modal-close-x {
+    width: 35px;
+    height: 35px;
+    line-height: 30px; } }
+
+.box-salary {
+  background: #fff; }
+  .box-salary .content {
+    padding: 10px 5px 0 15px; }
+    .box-salary .content .item {
+      margin-bottom: 5px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0; }
+      .box-salary .content .item .item-title {
+        font-size: 15px;
+        font-family: Roboto-bold; }
+      .box-salary .content .item .tag {
+        text-align: center;
+        font-family: Roboto-bold;
+        color: #fff;
+        border-bottom-right-radius: 12px;
+        border-top-left-radius: 12px;
+        padding: 3px;
+        max-width: 70px;
+        margin-right: 10px; }
+      .box-salary .content .item .hot {
+        background: #eb2222; }
+      .box-salary .content .item .new {
+        background: #f09226; }
+
+@media screen and (max-width: 768px) {
+  .box-salary .content .item .item-title {
+    font-size: 14px;
+    font-family: Roboto-bold; } }
+
+.job-it {
+  background: #fff; }
+  .job-it .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+    font-family: Roboto-bold;
+    font-size: 16px; }
+  .job-it .content-it {
+    padding: 10px; }
+  .job-it .item {
+    margin-bottom: 10px; }
+    .job-it .item .title-it {
+      font-size: 16px;
+      font-family: Roboto-bold;
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 2px;
+      cursor: pointer; }
+      .job-it .item .title-it:hover {
+        background: #ffd800;
+        border-radius: 5px; }
+      .job-it .item .title-it .detail {
+        font-family: Roboto;
+        background: #ccc;
+        border: 1px solid #bfbfbf;
+        padding: 0 5px;
+        border-radius: 15px; }
+    .job-it .item .text-it {
+      padding-left: 10px; }
+
