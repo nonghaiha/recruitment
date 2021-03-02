@@ -14,6 +14,7 @@
                     <th style="width: 20%">Name</th>
                     <th style="width: 40%">Description</th>
                     <th></th>
+                    <th></th>
                 </thead>
                 <tbody>
                     @foreach($data as $key => $value)
@@ -23,7 +24,11 @@
                         <td>{!! $value['description'] !!}</td>
                         <td>
                             <a href="{{route('admin.category.edit',['id' => $value['id']])}}" class="btn btn-warning">Edit</a>
-                            <a href="{{route('admin.category.delete',['id' => $value['id']])}}" class="btn btn-danger">Delete</a>
+                            <form action="{{route('admin.category.delete',['id' => $value['id']])}}" method="POST" style="display: inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

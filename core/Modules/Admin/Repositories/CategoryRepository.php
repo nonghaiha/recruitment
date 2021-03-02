@@ -35,4 +35,10 @@ class CategoryRepository implements CategoryRepositoryContract
         // TODO: Implement update() method.
         return $this->categoryModel->where('id',$id)->update($data);
     }
+
+    public function delete($id)
+    {
+        // TODO: Implement delete() method.
+        return $this->categoryModel->where('id',$id)->delete();
+    }
 }

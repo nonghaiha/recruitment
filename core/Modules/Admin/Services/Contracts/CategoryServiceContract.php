@@ -10,4 +10,6 @@ interface CategoryServiceContract
     public function find($id);
 
     public function update($data);
+
+    public function delete($id);
 }

@@ -37,4 +37,10 @@ class CategoryService implements CategoryServiceContract
             return $this->categoryRepository->update($data['id'],$data->only(['name','description','tag']));
         }
     }
+
+    public function delete($id)
+    {
+        // TODO: Implement delete() method.
+        return $this->categoryRepository->delete($id);
+    }
 }

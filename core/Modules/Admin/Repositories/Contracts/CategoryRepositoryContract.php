@@ -10,4 +10,6 @@ interface CategoryRepositoryContract
     public function find($id);
 
     public function update($id,$data);
+
+    public function delete($id);
 }

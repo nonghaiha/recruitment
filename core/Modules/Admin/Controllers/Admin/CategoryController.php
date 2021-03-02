@@ -57,4 +57,13 @@ class CategoryController extends Controller
         }
         return false;
     }
+
+    public function delete(Request $request)
+    {
+        $data = $this->categoryService->delete($request->id);
+        if ($data){
+            return redirect()->route('admin.category.index');
+        }
+        return false;
+    }
 }
