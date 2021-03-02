@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{cxl_asset('admin/css/jquery-ui.css')}}">
   <link rel="stylesheet" href="{{cxl_asset('admin/css/style.css')}}" />
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" id="@yield('bodyID')">
 <!-- Site wrapper -->
 <form action="{{route('admin.logout')}}" id="logout-form" method="POST" style="display:none">
   @csrf
@@ -52,7 +52,7 @@
               <li><a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
             </ul>
           </li>
-          
+
         </ul>
       </div>
     </nav>
@@ -65,9 +65,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      
+
       <!-- search form -->
-      
+
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -92,7 +92,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="{{route('admin.blog.index')}}">
             <i class="fa fa-book"></i>
             <span>Blog</span>
           </a>
