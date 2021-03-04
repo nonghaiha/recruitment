@@ -28,9 +28,14 @@ Route::group([
             });
 
             //BLOG
-            Route::group(['prefix' => 'blog'],function (){
-                Route::get('','BlogController@index')->name('admin.blog.index');
-                Route::get('create','BlogController@create')->name('admin.blog.create');
+            Route::group(['prefix' => 'news'],function (){
+                Route::get('','NewsController@index')->name('admin.news.index');
+                Route::get('create','NewsController@create')->name('admin.news.create');
+                Route::post('store','NewsController@store')->name('admin.news.store');
+                Route::get('edit/{id}','NewsController@edit')->name('admin.news.edit');
+                Route::put('update/{id}','NewsController@update')->name('admin.news.update');
+                Route::delete('delete/{id}','NewsController@delete')->name('admin.news.delete');
+                Route::post('search','NewsController@search')->name('admin.news.search');
             });
         });
     });

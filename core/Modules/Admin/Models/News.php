@@ -13,15 +13,16 @@ class News extends Model
         'author_id',
         'title',
         'description',
-        'job_id',
         'created_at',
         'updated_at',
-        'published_at'
+        'published_at',
+        'is_publish'
     ];
 
     protected $hidden = [];
 
-    public function jobs(){
-        return $this->hasOne(Job::class,'job_id');
+    public function author()
+    {
+        return $this->belongsTo(User::class,'author_id');
     }
 }
