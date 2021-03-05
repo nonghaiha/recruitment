@@ -6,6 +6,7 @@ use Core\Modules\Admin\Requests\CreateJobRequest;
 use Core\Modules\Admin\Requests\UpdateJobRequest;
 use Core\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Core\Modules\Admin\Services\Contracts\JobServiceContract;
+use Core\Modules\Admin\Services\Contracts\LocationServiceContract;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -13,14 +14,17 @@ class JobController extends Controller
 
     protected $categoryService;
     protected $jobService;
+    protected $locationService;
     public function __construct
     (
         CategoryServiceContract $categoryService,
-        JobServiceContract $jobService
+        JobServiceContract $jobService,
+        LocationServiceContract $locationService
     )
     {
         $this->categoryService = $categoryService;
         $this->jobService = $jobService;
+        $this->locationService = $locationService;
     }
 
     public function index()
@@ -32,7 +36,8 @@ class JobController extends Controller
     public function create()
     {
         $data = $this->categoryService->getAll();
-        return view('Admin::job.create',['categories' => $data]);
+        $locations = $this->locationService->getAll();
+        return view('Admin::job.create',['categories' => $data,'locations' => $locations]);
     }
 
     public function store(CreateJobRequest $request)

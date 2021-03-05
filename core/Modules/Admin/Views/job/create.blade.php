@@ -16,6 +16,17 @@
                 <form action="{{route('admin.job.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
+                        @if($errors->has('branch_location'))
+                            <div class="alert alert-danger">{{ $errors->first('branch_location') }}</div>
+                        @endif
+                        <div class="form-group">
+                            <label for="">Branch Location:</label>
+                            <select name="branch_location" id="" class="form-control" style="width: 20%">
+                                @foreach($locations as $location)
+                                    <option value="{{$location['id']}}">{{ $location['street'] . ',' . $location['city'] . ',' . $location['country'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         @if($errors->has('category_id'))
                             <div class="alert alert-danger">{{ $errors->first('category_id') }}</div>
                         @endif

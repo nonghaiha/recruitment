@@ -1,17 +1,27 @@
 <?php
 namespace Core\Modules;
 
+use Core\Modules\Admin\Repositories\CandidateRepository;
 use Core\Modules\Admin\Repositories\CategoryRepository;
+use Core\Modules\Admin\Repositories\Contracts\CandidateRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
+use Core\Modules\Admin\Repositories\Contracts\JobLocationRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\JobRepositoryContract;
+use Core\Modules\Admin\Repositories\Contracts\LocationRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\NewsRepositoryContract;
+use Core\Modules\Admin\Repositories\JobLocationRepository;
 use Core\Modules\Admin\Repositories\JobRepository;
+use Core\Modules\Admin\Repositories\LocationRepository;
 use Core\Modules\Admin\Repositories\NewsRepository;
+use Core\Modules\Admin\Services\CandidateService;
 use Core\Modules\Admin\Services\CategoryService;
+use Core\Modules\Admin\Services\Contracts\CandidateServiceContract;
 use Core\Modules\Admin\Services\Contracts\CategoryServiceContract as ContractsCategoryServiceContract;
 use Core\Modules\Admin\Services\Contracts\JobServiceContract;
+use Core\Modules\Admin\Services\Contracts\LocationServiceContract;
 use Core\Modules\Admin\Services\Contracts\NewsServiceContract;
 use Core\Modules\Admin\Services\JobService;
+use Core\Modules\Admin\Services\LocationService;
 use Core\Modules\Admin\Services\NewsService;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
@@ -75,6 +85,17 @@ class CoreServiceProvider extends ServiceProvider
         //Job
         $this->app->bind(JobRepositoryContract::class,JobRepository::class);
         $this->app->bind(JobServiceContract::class,JobService::class);
+
+        //Location
+        $this->app->bind(LocationRepositoryContract::class,LocationRepository::class);
+        $this->app->bind(LocationServiceContract::class,LocationService::class);
+
+        //JobLocation
+        $this->app->bind(JobLocationRepositoryContract::class,JobLocationRepository::class);
+
+        //Candidate
+        $this->app->bind(CandidateRepositoryContract::class,CandidateRepository::class);
+        $this->app->bind(CandidateServiceContract::class,CandidateService::class);
     }
 
 }

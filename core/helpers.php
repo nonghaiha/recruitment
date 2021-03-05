@@ -14,10 +14,18 @@ if (!function_exists('cxl_asset')) {
     }
 }
 
-if (!function_exists('cxl_storage')){
-    function cxl_storage($path)
+if (!function_exists('cxl_storage_admin')){
+    function cxl_storage_admin($path)
     {
-        $path = asset('storage/pdf/'.$path);
+        $path = asset('storage/admin/pdf/'.$path);
+        return $path;
+    }
+}
+
+if (!function_exists('cxl_storage_client')){
+    function cxl_storage_client($path)
+    {
+        $path = asset('storage/client/pdf/'.$path);
         return $path;
     }
 }

@@ -98,6 +98,12 @@
             <span>News</span>
           </a>
         </li>
+          <li>
+          <a href="{{route('admin.location.index')}}">
+            <i class="fa fa-industry"></i>
+            <span>Branch Location</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

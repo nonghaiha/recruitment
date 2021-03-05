@@ -49,6 +49,23 @@ Route::group([
                 Route::post('search','JobController@search')->name('admin.job.search');
             });
 
+            //CANDIDATE
+            Route::group(['prefix' => 'candidates'],function (){
+               Route::get('','CandidateController@index')->name('admin.candidate.index');
+               Route::get('detail/{id}','CandidateController@detail')->name('admin.candidate.detail');
+            });
+
+            //LOCATION
+            Route::group(['prefix' => 'location'],function (){
+               Route::get('','LocationController@index')->name('admin.location.index');
+               Route::get('create','LocationController@create')->name('admin.location.create');
+               Route::post('store','LocationController@store')->name('admin.location.store');
+               Route::get('edit/{id}','LocationController@edit')->name('admin.location.edit');
+               Route::put('update/{id}','LocationController@update')->name('admin.location.update');
+               Route::delete('delete/{id}','LocationController@delete')->name('admin.location.delete');
+               Route::post('search','LocationController@search')->name('admin.location.search');
+            });
+
             //FILE
             Route::get('document/pdf-file/{id}','DocumentController@getDocument')->name('admin.document.getFile');
         });

@@ -17,7 +17,7 @@ class JobLocation extends Model
 
     protected $hidden = [];
 
-    public $timestamp = false;
+    public $timestamps = false;
 
     public function jobs()
     {

@@ -3,6 +3,7 @@ namespace Core\Modules\Admin\Services;
 
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use Core\Modules\Admin\Repositories\Contracts\JobLocationRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\JobRepositoryContract;
 use Core\Modules\Admin\Services\Contracts\JobServiceContract;
 use Illuminate\Support\Facades\Storage;
@@ -10,12 +11,15 @@ use Illuminate\Support\Facades\Storage;
 class JobService implements JobServiceContract
 {
     protected $jobRepository;
+    protected $jobLocationRepository;
     public function __construct
     (
-        JobRepositoryContract $jobRepository
+        JobRepositoryContract $jobRepository,
+        JobLocationRepositoryContract $jobLocationRepository
     )
     {
         $this->jobRepository = $jobRepository;
+        $this->jobLocationRepository = $jobLocationRepository;
     }
 
     public function getAll()
@@ -49,10 +53,13 @@ class JobService implements JobServiceContract
             $path = $data['title'];
             $file = $request->file('jd');
             $fileExtension = $request->file('jd')->getClientOriginalExtension();
-            $file->move(storage_path('app/public/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
+            $file->move(storage_path('app/public/admin/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
             $data['jd'] = str_replace(' ','_',$data['title'].'.pdf');
         }
-        $this->jobRepository->store($data);
+        $dataJob = $this->jobRepository->store($data);
+        $jobLocation['job_id'] = $dataJob['id'];
+        $jobLocation['location_id'] = $data['branch_location'];
+        $this->jobLocationRepository->store($jobLocation);
         return true;
 
     }
@@ -75,7 +82,7 @@ class JobService implements JobServiceContract
                 $path = $data['title'];
                 $file = $request->file('jd');
                 $fileExtension = $request->file('jd')->getClientOriginalExtension();
-                $file->move(storage_path('app/public/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
+                $file->move(storage_path('app/public/admin/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
             }
             $data['jd']= str_replace(' ','_',$data['title'].'.pdf');
             return $this->jobRepository->update($request->id,$data);

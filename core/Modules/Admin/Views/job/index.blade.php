@@ -45,7 +45,7 @@
                                 <td>{{$value['title']}}</td>
                                 <td>{!! $value['description'] !!}</td>
                                 <td>
-                                    <a href="{{cxl_storage($value['jd'])}}" target="_blank">{{$value['jd']}}</a>
+                                    <a href="{{cxl_storage_admin($value['jd'])}}" target="_blank">{{$value['jd']}}</a>
                                 </td>
                                 <td>{{$value['number_of_employees']}}</td>
                                 <td>{{$value['salary']}}</td>
@@ -103,7 +103,7 @@
                                         salary = data[i]['salary'],
                                         applied_at = data[i]['applied_at'],
                                         ended_at = data[i]['ended_at'],
-                                        url_jd = '{{cxl_storage('')}}/' + data[i]['jd'];
+                                        url_jd = '{{cxl_storage_admin('')}}/' + data[i]['jd'];
                                         url = window.location.origin + '/admin/';
                                     if (jd == null)
                                     {

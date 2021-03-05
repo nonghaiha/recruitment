@@ -21,11 +21,11 @@ class CandidateJob extends Model
 
     public function jobs()
     {
-        return $this->belongsToMany(Job::class,'job_id');
+        return $this->belongsTo(Job::class,'job_id');
     }
 
     public function candidates()
     {
-        return $this->belongsToMany(Candidate::class,'candidate_id');
+        return $this->belongsTo(Candidate::class,'candidate_id');
     }
 }

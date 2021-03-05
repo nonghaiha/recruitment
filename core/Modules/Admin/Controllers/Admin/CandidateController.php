@@ -1,0 +1,24 @@
+<?php
+namespace Core\Modules\Admin\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Core\Modules\Admin\Services\Contracts\CandidateServiceContract;
+
+class CandidateController extends Controller
+{
+    protected $candidateService;
+    public function __construct
+    (
+        CandidateServiceContract $candidateService
+    )
+    {
+        $this->candidateService = $candidateService;
+    }
+
+    public function index()
+    {
+        $data = $this->candidateService->getAll();
+        dd($data);
+        return view('Admin::candidate.index');
+    }
+}
