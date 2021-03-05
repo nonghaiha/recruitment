@@ -37,6 +37,20 @@ Route::group([
                 Route::delete('delete/{id}','NewsController@delete')->name('admin.news.delete');
                 Route::post('search','NewsController@search')->name('admin.news.search');
             });
+
+            //JOB
+            Route::group(['prefix' => 'jobs'],function (){
+                Route::get('','JobController@index')->name('admin.job.index');
+                Route::get('create','JobController@create')->name('admin.job.create');
+                Route::post('store','JobController@store')->name('admin.job.store');
+                Route::get('edit/{id}','JobController@edit')->name('admin.job.edit');
+                Route::put('update/{id}','JobController@update')->name('admin.job.update');
+                Route::delete('delete/{id}','JobController@delete')->name('admin.job.delete');
+                Route::post('search','JobController@search')->name('admin.job.search');
+            });
+
+            //FILE
+            Route::get('document/pdf-file/{id}','DocumentController@getDocument')->name('admin.document.getFile');
         });
     });
 });

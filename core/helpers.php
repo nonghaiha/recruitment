@@ -13,3 +13,17 @@ if (!function_exists('cxl_asset')) {
         return $path;
     }
 }
+
+if (!function_exists('cxl_storage')){
+    function cxl_storage($path)
+    {
+        $path = asset('storage/pdf/'.$path);
+        return $path;
+    }
+}
+
+if(!function_exists('show_pdf')){
+    function show_pdf($path){
+        return response()->file($path);
+    }
+}

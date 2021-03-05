@@ -83,12 +83,12 @@
           </a>
         </li>
         <li>
-          <a href="index.php?m=order">
+          <a href="{{route('admin.job.index')}}">
             <i class="fa fa-shopping-cart"></i> <span>Jobs</span>
           </a>
         </li>
        <li>
-          <a href="index.php?m=customer">
+          <a href="{{route('admin.candidate.index')}}">
             <i class="fa fa-users"></i> <span>Candidates</span>
           </a>
         </li>

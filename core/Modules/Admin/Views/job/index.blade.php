@@ -1,21 +1,21 @@
 @extends('Admin::layout.app')
 
-@section('bodyID','blog')
+@section('bodyID','job')
 
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">News for 30Shine</h3>
+                    <h3 class="box-title">Jobs for 30Shine</h3>
 
                     <div class="box-tools">
-                        <a href="{{route('admin.news.create')}}" class="btn btn-info">Create</a>
+                        <a href="{{route('admin.job.create')}}" class="btn btn-info">Create</a>
                         <div class="input-group input-group-sm hidden-xs" style="width: 300px;">
                             <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default" id="searchNews"><i
+                                <button type="submit" class="btn btn-default" id="searchJobs"><i
                                         class="fa fa-search"></i></button>
                             </div>
                         </div>
@@ -26,29 +26,37 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Author</th>
+                            <th>Department</th>
                             <th>Title</th>
-                            <th>Description</th>
-                            <th>Publish At</th>
-                            <th>Status</th>
+                            <th class="col-xs-3">Description</th>
+                            <th>JD</th>
+                            <th class="col-xs-1">Number of Employees</th>
+                            <th>Salary</th>
+                            <th>Applied At</th>
+                            <th>Ended At</th>
                             <th></th>
                         </tr>
                         </thead>
-                        <tbody class="news-data">
+                        <tbody class="job-data">
                         @foreach($data as $key => $value)
                             <tr>
                                 <td>{{$value['id']}}</td>
-                                <td>{{$value->author->name}}</td>
+                                <td>{{$value->category->name}}</td>
                                 <td>{{$value['title']}}</td>
                                 <td>{!! $value['description'] !!}</td>
-                                <td>{{ $value['published_at'] }}</td>
-                                <td><span
-                                        class="label {{$value['is_publish'] == 1 ? 'label-success' : 'label-warning'}}">{{ $value['is_publish'] == 1 ? 'Posted' : 'Pending' }}</span>
-                                </td>
                                 <td>
-                                    <a href="{{route('admin.news.edit',['id' => $value['id']])}}"
+                                    <a href="{{cxl_storage($value['jd'])}}" target="_blank">{{$value['jd']}}</a>
+                                </td>
+                                <td>{{$value['number_of_employees']}}</td>
+                                <td>{{$value['salary']}}</td>
+                                <td>{{$value['applied_at']}}</td>
+                                <td>{{$value['ended_at']}}</td>
+                                <td>
+                                    <a href="{{route('admin.document.getFile',['id' => $value['id']])}}"
+                                       class="btn btn-info">Generate PDF</a>
+                                    <a href="{{route('admin.job.edit',['id' => $value['id']])}}"
                                        class="btn btn-warning">Edit</a>
-                                    <form action="{{route('admin.news.delete',['id' => $value['id']])}}" method="POST"
+                                    <form action="{{route('admin.job.delete',['id' => $value['id']])}}" method="POST"
                                           style="display: inline-block">
                                         @csrf
                                         @method('DELETE')
@@ -64,61 +72,60 @@
         </div>
     </div>
 @endsection
-
 @section('script')
     <script type="text/javascript">
         $(function () {
             let _load = false;
-            $(document).on('click', '#searchNews', function () {
+            $(document).on('click', '#searchJobs', function () {
                 if (_load === false) {
                     _load = true;
-                    let data = $('input[name=table_search]').val();
+                    let key = $('input[name=table_search]').val();
                     $.ajax({
-                        url: '{{route('admin.news.search')}}',
+                        url: '{{route('admin.job.search')}}',
                         type: 'POST',
                         headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         data: {
-                            data: data
+                            key: key,
                         },
                         success: function (data) {
                             _load = false;
-                            console.log(data);
                             if (data.length > 0) {
                                 let html = '';
                                 for (let i = 0; i < data.length; i++) {
                                     let id = data[i]['id'],
-                                        author_name = data[i]['name'],
+                                        department = data[i]['name'],
                                         title = data[i]['title'],
                                         description = data[i]['description'],
-                                        published_at = data[i]['published_at'],
-                                        is_publish = data[i]['is_publish'],
-                                        status = '',
-                                        class_status = '',
-                                        url = window.location.origin + '/admin/news/';
-
-                                    if (is_publish == 1) {
-                                        status = 'Posted';
-                                        class_status = 'label-success'
-                                    } else {
-                                        status = 'Pending';
-                                        class_status = 'label-warning'
+                                        jd = data[i]['jd'],
+                                        number_of_employees = data[i]['number_of_employees'],
+                                        salary = data[i]['salary'],
+                                        applied_at = data[i]['applied_at'],
+                                        ended_at = data[i]['ended_at'],
+                                        url_jd = '{{cxl_storage('')}}/' + data[i]['jd'];
+                                        url = window.location.origin + '/admin/';
+                                    if (jd == null)
+                                    {
+                                        jd = '';
                                     }
+
                                     html += '<tr>\n' +
                                         '                                <td>' + id + '</td>\n' +
-                                        '                                <td>' + author_name + '</td>\n' +
+                                        '                                <td>' + department + '</td>\n' +
                                         '                                <td>' + title + '</td>\n' +
                                         '                                <td>' + description + '</td>\n' +
-                                        '                                <td>' + published_at + '</td>\n' +
-                                        '                                <td><span\n' +
-                                        '                                        class="label ' + class_status + '">' + status + '</span>\n' +
-                                        '                                </td>\n' +
                                         '                                <td>\n' +
-                                        '                                    <a href="' + url + '/edit/' + id + '"\n' +
-                                        '                                       class="btn btn-warning">Edit</a>\n' +
-                                        '                                    <form action="' + url + '/delete/' + id + '" method="POST"\n' +
-                                        '                                          style="display: inline-block">\n' +
+                                        '                                    <a href="' + url_jd + '" target="_blank">' + jd + '</a>\n' +
+                                        '                                </td>\n' +
+                                        '                                <td>' + number_of_employees + '</td>\n' +
+                                        '                                <td>' + salary + '</td>\n' +
+                                        '                                <td>' + applied_at + '</td>\n' +
+                                        '                                <td>' + ended_at + '</td>\n' +
+                                        '                                <td>\n' +
+                                        '                                    <a href="' + url + '/document/pdf-file/' + id + '" class="btn btn-info">Generate PDF</a>\n' +
+                                        '                                    <a href="' + url + '/edit/' + id + '" class="btn btn-warning">Edit</a>\n' +
+                                        '                                    <form action="' + url + '/delete/' + id + '" method="POST" style="display: inline-block">\n' +
                                         '                                        @csrf\n' +
                                         '                                        @method('DELETE')\n' +
                                         '                                        <button type="submit" class="btn btn-danger">Delete</button>\n' +
@@ -128,14 +135,14 @@
 
 
                                 }
-                                $('.news-data').html(html);
+                                $('.job-data').html(html);
                             } else {
                                 _load = true;
                             }
                         },
                         error: function () {
                             _load = true;
-                            alert('Something wrong please try again');
+                            alert('Something wrong please try again')
                         }
                     })
                 }

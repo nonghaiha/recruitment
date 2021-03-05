@@ -12,7 +12,7 @@ class Job extends Model
 
     protected $fillable = [
         'category_id',
-        'author_id',
+        'title',
         'description',
         'jd',
         'number_of_employees',

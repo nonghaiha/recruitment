@@ -3,11 +3,15 @@ namespace Core\Modules;
 
 use Core\Modules\Admin\Repositories\CategoryRepository;
 use Core\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
+use Core\Modules\Admin\Repositories\Contracts\JobRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\NewsRepositoryContract;
+use Core\Modules\Admin\Repositories\JobRepository;
 use Core\Modules\Admin\Repositories\NewsRepository;
 use Core\Modules\Admin\Services\CategoryService;
 use Core\Modules\Admin\Services\Contracts\CategoryServiceContract as ContractsCategoryServiceContract;
+use Core\Modules\Admin\Services\Contracts\JobServiceContract;
 use Core\Modules\Admin\Services\Contracts\NewsServiceContract;
+use Core\Modules\Admin\Services\JobService;
 use Core\Modules\Admin\Services\NewsService;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
@@ -67,6 +71,10 @@ class CoreServiceProvider extends ServiceProvider
         //News
         $this->app->bind(NewsRepositoryContract::class,NewsRepository::class);
         $this->app->bind(NewsServiceContract::class,NewsService::class);
+
+        //Job
+        $this->app->bind(JobRepositoryContract::class,JobRepository::class);
+        $this->app->bind(JobServiceContract::class,JobService::class);
     }
 
 }

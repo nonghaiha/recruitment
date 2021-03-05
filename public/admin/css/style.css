@@ -46,10 +46,10 @@
 .c-category{
 	width: 150px;
 }
-#blog .box-tools{
+.box-tools{
     display: flex;
 }
-#blog .box-tools a{
+.box-tools a{
     margin-right: 20px;
     height: 30px;
     padding: 4px 12px;

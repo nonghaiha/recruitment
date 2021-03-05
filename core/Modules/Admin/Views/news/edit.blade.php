@@ -43,7 +43,7 @@
                             <label for="">
                                 Publish:
                             </label>
-                            <input type="checkbox" name="is_publish" id="is_publish" style="display: none" {{$data['is_publish'] == 1 ? 'checked="checked"' : ''}}>
+                            <input type="checkbox" name="is_publish" id="is_publish" style="display: none" {{$data['is_publish'] == 1 ? 'checked="checked   "' : ''}}>
                             <div class="toggle-icon {{$data['is_publish'] == 1 ? 'active' : ''}}">
                                 <a href="javascript:void(0)"></a>
                             </div>
