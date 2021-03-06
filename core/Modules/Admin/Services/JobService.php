@@ -34,6 +34,12 @@ class JobService implements JobServiceContract
         return $this->jobRepository->find($id);
     }
 
+    public function findByCategoryID($id)
+    {
+        // TODO: Implement findByCategoryID() method.
+        return $this->jobRepository->findByCategoryID($id);
+    }
+
     public function store($request)
     {
         // TODO: Implement store() method.

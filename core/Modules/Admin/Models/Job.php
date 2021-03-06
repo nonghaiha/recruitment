@@ -35,4 +35,19 @@ class Job extends Model
     {
         return $this->hasMany(Candidate::class);
     }
+
+    public function job_location()
+    {
+        return $this->hasMany(JobLocation::class);
+    }
+
+    public function locations()
+    {
+        return $this->belongsToMany(Location::class);
+    }
+
+    public function find_branch_location()
+    {
+        return $this->belongsToMany(Location::class,'job_location');
+    }
 }

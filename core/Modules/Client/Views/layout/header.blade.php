@@ -8,16 +8,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <meta name="next-head-count" content="2" />
-    <link rel="preload" href="{{cxl_asset('admin/_next/static/css/commons.eda196b2.chunk.css')}}" as="style" />
-    <link rel="stylesheet" href="{{cxl_asset('admin/_next/static/css/commons.eda196b2.chunk.css')}}" />
-    <link rel="preload" href="{{cxl_asset('admin/_next/static/css/styles.5ee916aa.chunk.css')}}" as="style" />
-    <link rel="stylesheet" href="{{cxl_asset('admin/_next/static/css/styles.5ee916aa.chunk.css')}}" />
-    <link rel="preload" href="_next/static/BHz_HRn-ITkSmj7-QsYw-/pages/index.js" as="script" />
-    <link rel="preload" href="_next/static/BHz_HRn-ITkSmj7-QsYw-/pages/_app.js" as="script" />
-    <link rel="preload" href="_next/static/runtime/webpack-4b444dab214c6491079c.js" as="script" />
-    <link rel="preload" href="_next/static/chunks/commons.ba86c38952f558b0d655.js" as="script" />
-    <link rel="preload" href="_next/static/chunks/styles.78c70f04ad5b9dbbf819.js" as="script" />
-    <link rel="preload" href="_next/static/runtime/main-ea8f0e424df89d95fe25.js" as="script" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/css/commons.eda196b2.chunk.css')}}" as="style" />
+    <link rel="stylesheet" href="{{cxl_asset('client/_next/static/css/commons.eda196b2.chunk.css')}}" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/css/styles.5ee916aa.chunk.css')}}" as="style" />
+    <link rel="stylesheet" href="{{cxl_asset('client/_next/static/css/styles.5ee916aa.chunk.css')}}" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/BHz_HRn-ITkSmj7-QsYw-/pages/index.js')}}" as="script" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/BHz_HRn-ITkSmj7-QsYw-/pages/_app.js')}}" as="script" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/runtime/webpack-4b444dab214c6491079c.js')}}" as="script" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/chunks/commons.ba86c38952f558b0d655.js')}}" as="script" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/chunks/styles.78    c70f04ad5b9dbbf819.js')}}" as="script" />
+    <link rel="preload" href="{{cxl_asset('client/_next/static/runtime/main-ea8f0e424df89d95fe25.js')}}" as="script" />
+    <link rel="stylesheet" href="{{cxl_asset('client/css/style.css')}}">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         <div class="index">
             <div class="nav">
                 <div class="logo-mb mb">
-                    <img src="../v3.30shine.org/data/images/Trangchu/logo.png" /><i aria-label="icon: menu-unfold"
+                    <img src="{{cxl_asset('client/images/logo/logo.png')}}" /><i aria-label="icon: menu-unfold"
                         id="togle-menu" style="color: #fff; font-size: 30px" tabindex="-1"
                         class="anticon anticon-menu-unfold"><svg viewBox="64 64 896 896" focusable="false" class=""
                             data-icon="menu-unfold" width="1em" height="1em" fill="currentColor" aria-hidden="true">
@@ -36,7 +37,7 @@
                 </div>
                 <div class="menu close">
                     <div class="logo-pc pc">
-                        <img src="../v3.30shine.org/data/images/Trangchu/logo.png" />
+                        <img src="{{cxl_asset('client/images/logo/logo.png')}}" />
                     </div>
                     <div class="item-link mb" style="background: #111; height: 60px">
                         <i aria-label="icon: close-square" style="font-size: 30px; color: #fff"
@@ -51,10 +52,10 @@
                                 </path>
                             </svg></i>
                     </div>
-                    <div class="item-link"><a href="index.html">TRANG CHỦ</a></div>
-                    <div class="item-link"><a href="blog.html">BLOG</a></div>
+                    <div class="item-link"><a href="{{route('client.home')}}">TRANG CHỦ</a></div>
+                    <div class="item-link"><a href="{{route('client.blog')}}">BLOG</a></div>
                     <div class="item-link">
-                        <a href="list-question.html">CÂU HỎI THƯỜNG GẶP</a>
+                        <a href="{{route('client.listQuestion')}}">CÂU HỎI THƯỜNG GẶP</a>
                     </div>
                 </div>
                 <div class="back-drop" style="
@@ -72,11 +73,11 @@
                 <div class="overlay"></div>
                 <div class="screen-pc">
                     <img class="img-banner"
-                        src="../s3-ap-southeast-1.amazonaws.com/tuyendung.30shine.org/data/images/TuyenDung/Banner/banner_pc_10082020.jpg" />
+                        src="{{cxl_asset('client/images/banner/banner_pc_10082020.jpg')}}" />
                 </div>
                 <div class="screen-mb">
                     <img class="img-banner"
-                        src="../s3-ap-southeast-1.amazonaws.com/tuyendung.30shine.org/data/images/TuyenDung/Banner/banner_mobile_10082020.jpg" />
+                        src="{{cxl_asset('client/images/banner/banner_mobile_10082020.jpg')}}" />
                 </div>
                 <div class="content-header">
                     <div class="text">
@@ -84,51 +85,70 @@
                         <span style="color: #fff">30SHINE</span> NGAY HÔM NAY
                     </div>
                     <div class="box-find">
-                        <div class="box-dropdown">
-                            <div class="dropdown-country ant-select ant-select-enabled">
-                                <div class="ant-select-selection ant-select-selection--single" role="combobox"
-                                    aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false"
-                                    tabindex="0">
-                                    <div class="ant-select-selection__rendered">
-                                        <div class="ant-select-selection-selected-value" title="--Chọn khu vực--"
-                                            style="display: block; opacity: 1">
-                                            --Chọn khu vực--
-                                        </div>
-                                    </div>
-                                    <span class="ant-select-arrow" style="user-select: none; -webkit-user-select: none"
-                                        unselectable="on"><i aria-label="icon: down"
-                                            class="anticon anticon-down ant-select-arrow-icon"><svg
-                                                viewBox="64 64 896 896" focusable="false" class="" data-icon="down"
-                                                width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                                <path
-                                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
-                                                </path>
-                                            </svg></i></span>
+                        <form action="{{route('client.job.search')}}" method="POST" style="width: 100%;display: flex">
+                            @csrf
+                            <div class="box-dropdown">
+                                <div class="dropdown-country ant-select ant-select-enabled">
+                                    <select class="ant-select-selection ant-select-selection--single" role="combobox"
+                                        aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false"
+                                        tabindex="0" style="width: 100%">
+                                        <option class="ant-select-selection__rendered1">
+                                            <div class="ant-select-selection-selected-value" title="Miền Bắc"
+                                                style="display: block; opacity: 1">
+                                                Miền Bắc
+                                            </div>
+                                        </option>
+                                        <option class="ant-select-selection__rendered1">
+                                            <div class="ant-select-selection-selected-value" title="Miền Trung"
+                                                style="display: block; opacity: 1">
+                                                Miền Trung
+                                            </div>
+                                        </option>
+                                        <option class="ant-select-selection__rendered1">
+                                            <div class="ant-select-selection-selected-value" title="Miền Nam"
+                                                 style="display: block; opacity: 1">
+                                                Miền Nam
+                                            </div>
+                                        </option>
+                                        <span class="ant-select-arrow" style="user-select: none; -webkit-user-select: none"
+                                            unselectable="on"><i aria-label="icon: down"
+                                                class="anticon anticon-down ant-select-arrow-icon"><svg
+                                                    viewBox="64 64 896 896" focusable="false" class="" data-icon="down"
+                                                    width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                    <path
+                                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                                    </path>
+                                                </svg></i></span>
+                                    </select>
+                                </div>
+                                <div class="dropdown-district ant-select ant-select-enabled">
+                                    <select class="ant-select-selection ant-select-selection--single" role="combobox"
+                                        aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false"
+                                        tabindex="0" style="width: 100%" name="search">
+                                        @if(isset($categories))
+                                            @foreach($categories as $category)
+                                                <option class="ant-select-selection__rendered" value="{{$category['id']}}">
+                                                    <div class="ant-select-selection-selected-value" title="--Chọn vị trí--"
+                                                         style="display: block; opacity: 1">
+                                                        {{$category['name']}}
+                                                    </div>
+                                                </option>
+                                            @endforeach
+                                        @endif
+                                        <span class="ant-select-arrow" style="user-select: none; -webkit-user-select: none"
+                                            unselectable="on"><i aria-label="icon: down"
+                                                class="anticon anticon-down ant-select-arrow-icon"><svg
+                                                    viewBox="64 64 896 896" focusable="false" class="" data-icon="down"
+                                                    width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                    <path
+                                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                                    </path>
+                                                </svg></i></span>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="dropdown-district ant-select ant-select-enabled">
-                                <div class="ant-select-selection ant-select-selection--single" role="combobox"
-                                    aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false"
-                                    tabindex="0">
-                                    <div class="ant-select-selection__rendered">
-                                        <div class="ant-select-selection-selected-value" title="--Chọn vị trí--"
-                                            style="display: block; opacity: 1">
-                                            --Chọn vị trí--
-                                        </div>
-                                    </div>
-                                    <span class="ant-select-arrow" style="user-select: none; -webkit-user-select: none"
-                                        unselectable="on"><i aria-label="icon: down"
-                                            class="anticon anticon-down ant-select-arrow-icon"><svg
-                                                viewBox="64 64 896 896" focusable="false" class="" data-icon="down"
-                                                width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                                <path
-                                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
-                                                </path>
-                                            </svg></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn-find"><span> CHI TIẾT</span></button>
+                            <button class="btn-find"><span> CHI TIẾT</span></button>
+                        </form>
                     </div>
                 </div>
             </div>

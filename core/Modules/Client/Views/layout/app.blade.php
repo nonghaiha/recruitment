@@ -1,3 +1,3 @@
-@include('Admin::layout.header');
+@include('Client::layout.header');
 @yield('content')
-@include('Admin::layout.footer');
+@include('Client::layout.footer');

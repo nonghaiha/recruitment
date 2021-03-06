@@ -27,7 +27,7 @@ class CategoryRepository implements CategoryRepositoryContract
 
     public function find($id)
     {
-        return $this->categoryModel->find($id);
+        return $this->categoryModel->with('job')->find($id);
     }
 
     public function update($id, $data)

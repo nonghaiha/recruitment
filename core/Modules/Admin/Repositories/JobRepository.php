@@ -27,6 +27,12 @@ class JobRepository implements JobRepositoryContract
         return $this->jobModel->with('category')->find($id);
     }
 
+    public function findByCategoryID($id)
+    {
+        // TODO: Implement findByCategoryID() method.
+        return $this->jobModel->with('category','job_location','find_branch_location')->where('category_id',$id)->first();
+    }
+
     public function store($data)
     {
         // TODO: Implement store() method.

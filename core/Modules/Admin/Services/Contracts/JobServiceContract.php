@@ -7,6 +7,8 @@ interface JobServiceContract
 
     public function find($id);
 
+    public function findByCategoryID($id);
+
     public function store($request);
 
     public function update($request);

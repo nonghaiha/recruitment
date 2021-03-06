@@ -9,6 +9,8 @@ interface JobRepositoryContract
 
     public function find($id);
 
+    public function findByCategoryID($id);
+
     public function update($id,$data);
 
     public function delete($id);

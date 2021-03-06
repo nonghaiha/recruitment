@@ -17,7 +17,9 @@ class Category extends Model
         'updated_at'
     ];
 
-    public function job(){
-        return $this->hasMany(Job::class);
+    public function job()
+    {
+        return $this->hasMany(Job::class)->with('find_branch_location');
     }
+
 }

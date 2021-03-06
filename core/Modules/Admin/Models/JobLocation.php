@@ -26,7 +26,7 @@ class JobLocation extends Model
 
     public function locations()
     {
-        return $this->belongsTo(Location::class,'location_id');
+        return $this->belongsTo(Location::class);
     }
 
 }
