@@ -18,7 +18,12 @@ class CandidateController extends Controller
     public function index()
     {
         $data = $this->candidateService->getAll();
-        dd($data);
-        return view('Admin::candidate.index');
+        return view('Admin::candidate.index',['data' => $data]);
+    }
+
+    public function detail($id)
+    {
+        $data = $this->candidateService->find($id);
+        return view('Admin::candidate.detail',['data' => $data]);
     }
 }

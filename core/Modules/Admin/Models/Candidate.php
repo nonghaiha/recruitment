@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Candidate extends Model
 {
     protected $table = 'candidates';
-    
+
     protected $fillable = [
         'user_id',
         'location_id',
+        'job_id',
+        'jd',
+        'user_id',
         'name',
         'email',
         'phone',
@@ -22,8 +25,8 @@ class Candidate extends Model
 
     protected $hidden = [];
 
-    public function candidate_job()
+    public function job()
     {
-        return $this->hasMany(CandidateJob::class);
+        return $this->belongsTo(Job::class,'job_id');
     }
 }

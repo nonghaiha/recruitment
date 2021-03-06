@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-body table-responsive no-padding">
+                <div class="box-body">
                     <table class="table table-hover">
                         <thead>
                         <tr>

@@ -21,8 +21,8 @@ class CreateJobsTable extends Migration
             $table->string('jd')->nullable();
             $table->integer('number_of_employees')->nullable();
             $table->string('salary')->nullable();
-            $table->timestamp('applied_at');
-            $table->timestamp('ended_at');
+            $table->timestamp('applied_at')->nullable();
+            $table->timestamp('ended_at')->useCurrent();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')
                 ->onUpdate('cascade')->onDelete('cascade');

@@ -79,7 +79,7 @@
         </li>
         <li>
           <a href="{{route('admin.category.index')}}">
-            <i class="fa fa-bookmark"></i> <span>Category</span>
+            <i class="fa fa-bookmark"></i> <span>Department</span>
           </a>
         </li>
         <li>

@@ -24,8 +24,9 @@ class CandidateRepository implements CandidateRepositoryContract
             ->get();
     }
 
-    public function detail($id)
+    public function find($id)
     {
         // TODO: Implement detail() method.
+        return $this->candidateModel->with('job')->find($id);
     }
 }

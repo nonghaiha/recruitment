@@ -15,11 +15,11 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->unsignedBigInteger('location_id');
             $table->string('name');
             $table->string('email');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('address');
             $table->longText('experience');
             $table->timestamps();

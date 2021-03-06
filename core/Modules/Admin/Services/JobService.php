@@ -38,54 +38,60 @@ class JobService implements JobServiceContract
     {
         // TODO: Implement store() method.
         $data = $request->all();
+        if (auth()->user()) {
+            $data['author_id'] = auth()->user()->id;
 
-        if ($data['salary'] == null || $data['salary'] == 0){
-            $data['salary'] = 'Deal';
+            if ($data['salary'] == null || $data['salary'] == 0) {
+                $data['salary'] = 'Deal';
+            }
+
+            if ($data['applied_at'] == null) {
+                $data['applied_at'] = Carbon::now();
+            }
+
+            $data['ended_at'] = Carbon::parse($data['ended_at'])->format('Y-m-d');
+            if (isset($request->jd)) {
+                $fileName = $request->jd;
+                $path = $data['title'];
+                $file = $request->file('jd');
+                $fileExtension = $request->file('jd')->getClientOriginalExtension();
+                $file->move(storage_path('app/public/admin/pdf/'), str_replace(' ', '_', $data['title'] . '.pdf'));
+                $data['jd'] = str_replace(' ', '_', $data['title'] . '.pdf');
+            }
+            $dataJob = $this->jobRepository->store($data);
+            $jobLocation['job_id'] = $dataJob['id'];
+            $jobLocation['location_id'] = $data['branch_location'];
+            $this->jobLocationRepository->store($jobLocation);
+            return true;
         }
-
-        if ($data['applied_at'] == null){
-            $data['applied_at'] = Carbon::now();
-        }
-
-        $data['ended_at'] = Carbon::parse($data['ended_at'])->format('Y-m-d');
-        if (isset($request->jd)){
-            $fileName = $request->jd;
-            $path = $data['title'];
-            $file = $request->file('jd');
-            $fileExtension = $request->file('jd')->getClientOriginalExtension();
-            $file->move(storage_path('app/public/admin/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
-            $data['jd'] = str_replace(' ','_',$data['title'].'.pdf');
-        }
-        $dataJob = $this->jobRepository->store($data);
-        $jobLocation['job_id'] = $dataJob['id'];
-        $jobLocation['location_id'] = $data['branch_location'];
-        $this->jobLocationRepository->store($jobLocation);
-        return true;
-
+        return false;
     }
 
     public function update($request)
     {
         // TODO: Implement update() method.
         if ($request){
-            $data = $request->all();
-            unset($data['_token']);
-            unset($data['_method']);
-            if ($data['salary'] == null || $data['salary'] == 0){
-                $data['salary'] = 'Deal';
-            }
+            if (auth()->user()){
+                $data = $request->all();
+                $data['author_id'] = auth()->user()->id;
+                unset($data['_token']);
+                unset($data['_method']);
+                if ($data['salary'] == null || $data['salary'] == 0){
+                    $data['salary'] = 'Deal';
+                }
 
-            $data['ended_at'] = Carbon::parse($data['ended_at'])->format('Y-m-d');
-            $data['applied_at'] = Carbon::parse($data['applied_at'])->format('Y-m-d');
-            if (isset($request->jd)){
-                $fileName = $request->jd;
-                $path = $data['title'];
-                $file = $request->file('jd');
-                $fileExtension = $request->file('jd')->getClientOriginalExtension();
-                $file->move(storage_path('app/public/admin/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
+                $data['ended_at'] = Carbon::parse($data['ended_at'])->format('Y-m-d');
+                $data['applied_at'] = Carbon::parse($data['applied_at'])->format('Y-m-d');
+                if (isset($request->jd)){
+                    $fileName = $request->jd;
+                    $path = $data['title'];
+                    $file = $request->file('jd');
+                    $fileExtension = $request->file('jd')->getClientOriginalExtension();
+                    $file->move(storage_path('app/public/admin/pdf/'), str_replace(' ','_',$data['title'].'.pdf'));
+                }
+                $data['jd']= str_replace(' ','_',$data['title'].'.pdf');
+                return $this->jobRepository->update($request->id,$data);
             }
-            $data['jd']= str_replace(' ','_',$data['title'].'.pdf');
-            return $this->jobRepository->update($request->id,$data);
         }
         return false;
     }

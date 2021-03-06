@@ -5,5 +5,5 @@ interface CandidateServiceContract
 {
     public function getAll();
 
-    public function detail($id);
+    public function find($id);
 }

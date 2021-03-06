@@ -13,6 +13,7 @@ class Job extends Model
     protected $fillable = [
         'category_id',
         'title',
+        'author_id',
         'description',
         'jd',
         'number_of_employees',
@@ -30,8 +31,8 @@ class Job extends Model
         return $this->belongsTo(Category::class,'category_id');
     }
 
-    public function job_location()
+    public function candidates()
     {
-        return $this->hasMany(JobLocation::class);
+        return $this->hasMany(Candidate::class);
     }
 }

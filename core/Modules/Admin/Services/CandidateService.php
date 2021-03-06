@@ -1,6 +1,7 @@
 <?php
 namespace Core\Modules\Admin\Services;
 
+use Carbon\Carbon;
 use Core\Modules\Admin\Repositories\Contracts\CandidateRepositoryContract;
 use Core\Modules\Admin\Services\Contracts\CandidateServiceContract;
 
@@ -21,8 +22,12 @@ class CandidateService implements CandidateServiceContract
         return $this->candidateRepository->getAll();
     }
 
-    public function detail($id)
+    public function find($id)
     {
         // TODO: Implement detail() method.
+        $data = $this->candidateRepository->find($id);
+        Carbon::setLocale('en');
+        $data['time_apply'] = Carbon::parse($data['created_at'])->diffForHumans(Carbon::now());
+        return $data;
     }
 }
