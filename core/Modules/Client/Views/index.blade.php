@@ -17,7 +17,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -28,7 +28,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -39,7 +39,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -50,7 +50,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,7 +60,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -80,16 +80,22 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <ul style="display: block" class="slick-dots slick-dots-bottom">
-                                        <li class="slick-active"><button>1</button></li>
-                                        <li class=""><button>2</button></li>
-                                        <li class=""><button>3</button></li>
+                                        <li class="slick-active">
+                                            <button>1</button>
+                                        </li>
+                                        <li class="">
+                                            <button>2</button>
+                                        </li>
+                                        <li class="">
+                                            <button>3</button>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,7 +111,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,7 +122,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +133,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,7 +144,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -148,7 +154,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/stylist_03-09_pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,7 +164,7 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide1-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,187 +174,87 @@
                                                     <div tabindex="-1"
                                                          style="width: 100%; display: inline-block">
                                                         <img
-                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}" />
+                                                            src="{{cxl_asset('client/images/banner/slide/slide2-pc.jpg')}}"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <ul style="display: block" class="slick-dots slick-dots-bottom">
-                                        <li class="slick-active"><button>1</button></li>
-                                        <li class=""><button>2</button></li>
-                                        <li class=""><button>3</button></li>
+                                        <li class="slick-active">
+                                            <button>1</button>
+                                        </li>
+                                        <li class="">
+                                            <button>2</button>
+                                        </li>
+                                        <li class="">
+                                            <button>3</button>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="box-salary">
-                            <div class="title">VIỆC LÀM LƯƠNG CAO</div>
+                            <div class="title">VIỆC LÀM HOT</div>
                             <div class="content">
-                                <div class="item">
-                                    <div class="ant-row" style="cursor: pointer">
-                                        <div class="ant-col ant-col-20">
-                                            <div class="item-title">
-                                                -
-                                                <!-- -->STYLIST - THỢ CẮT TẠI HỒ CHÍ MINH
+                                @foreach($jobDesc as $key =>  $item)
+                                    <div class="item">
+                                        <div class="ant-row" style="cursor: pointer">
+                                            <div class="ant-col ant-col-20">
+                                                <div class="item-title">
+                                                    <a href="{{route('client.job.detail',['id' => $item['id']])}}"
+                                                       class="blank">
+                                                        -
+                                                        <!-- -->{{$item['title']}}
+                                                        - {{$item->find_branch_location[0]->city}}
+                                                    </a>
+                                                </div>
+                                                <div style="padding-left: 7px">
+                                                    <!-- -->Thu nhập: {{$item['salary']}}
+                                                </div>
                                             </div>
-                                            <div style="padding-left: 7px">
-                                                <!-- -->Thu nhập: 9.000.000 - 15.000.000 đồng
+                                            <div class="ant-col ant-col-4">
+                                                <div class="tag hot">HOT</div>
                                             </div>
-                                        </div>
-                                        <div class="ant-col ant-col-4">
-                                            <div class="tag hot">HOT</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="ant-row" style="cursor: pointer">
-                                        <div class="ant-col ant-col-20">
-                                            <div class="item-title">
-                                                -
-                                                <!-- -->STYLIST - THỢ CẮT TẠI ĐỒNG NAI
-                                            </div>
-                                            <div style="padding-left: 7px">
-                                                <!-- -->Thu nhập: 9.000.000 - 15.000.000 đồng
-                                            </div>
-                                        </div>
-                                        <div class="ant-col ant-col-4">
-                                            <div class="tag hot">HOT</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="ant-row" style="cursor: pointer">
-                                        <div class="ant-col ant-col-20">
-                                            <div class="item-title">
-                                                -
-                                                <!-- -->STYLIST - THỢ CẮT TẠI BÌNH DƯƠNG
-                                            </div>
-                                            <div style="padding-left: 7px">
-                                                <!-- -->Thu nhập: 9.000.000 - 15.000.000 đồng
-                                            </div>
-                                        </div>
-                                        <div class="ant-col ant-col-4">
-                                            <div class="tag hot">HOT</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="ant-row" style="cursor: pointer">
-                                        <div class="ant-col ant-col-20">
-                                            <div class="item-title">
-                                                -
-                                                <!-- -->SKINNER - THỢ GỘI TẠI HÀ NỘI
-                                            </div>
-                                            <div style="padding-left: 7px">
-                                                <!-- -->Thu nhập: 9.000.000 - 12.000.000 đồng
-                                            </div>
-                                        </div>
-                                        <div class="ant-col ant-col-4">
-                                            <div class="tag new">NEW</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="ant-row" style="cursor: pointer">
-                                        <div class="ant-col ant-col-20">
-                                            <div class="item-title">
-                                                -
-                                                <!-- -->
-                                                SKINNER - THỢ GỘI TẠI HỒ CHÍ MINH
-                                            </div>
-                                            <div style="padding-left: 7px">
-                                                <!-- -->Thu nhập: 9.000.000 - 12.000.000 đồng
-                                            </div>
-                                        </div>
-                                        <div class="ant-col ant-col-4">
-                                            <div class="tag new">NEW</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="ant-row" style="cursor: pointer">
-                                        <div class="ant-col ant-col-20">
-                                            <div class="item-title">
-                                                -
-                                                <!-- -->SKINNER - THỢ GỘI ĐỒNG NAI
-                                            </div>
-                                            <div style="padding-left: 7px">
-                                                <!-- -->Thu nhập: 9.000.000 - 12.000.000 đồng
-                                            </div>
-                                        </div>
-                                        <div class="ant-col ant-col-4">
-                                            <div class="tag new">NEW</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="job">
                             <div class="title">VIỆC LÀM THEO VỊ TRÍ</div>
                             <div class="content content-job">
                                 <div class="ant-collapse ant-collapse-icon-position-left">
-                                    <div class="ant-collapse-item ant-collapse-item-active">
-                                        <div class="ant-collapse-header" role="button" tabindex="0"
-                                             aria-expanded="true">
-                                            <i aria-label="icon: right"
-                                               class="anticon anticon-right ant-collapse-arrow"><svg
-                                                    viewBox="64 64 896 896" focusable="false" class="" style="
+                                    @foreach($categories as $category)
+                                        <div class="ant-collapse-item ant-collapse-item-active">
+                                            <div class="ant-collapse-header" role="button" tabindex="0"
+                                                 aria-expanded="true">
+                                                <i aria-label="icon: right"
+                                                   class="anticon anticon-right ant-collapse-arrow">
+                                                    <svg
+                                                        viewBox="64 64 896 896" focusable="false" class="" style="
                       -ms-transform: rotate(90deg);
                       transform: rotate(90deg);
                     " data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                                    <path
-                                                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z">
-                                                    </path>
-                                                </svg></i>KHỐI SALON
-                                        </div>
-                                        <div class="ant-collapse-content ant-collapse-content-active">
-                                            <div class="ant-collapse-content-box">
-                                                <div class="text">
-                                                    <span>1. Quản lí salon</span><br /><span>2. Stylist - thợ
-                                                    cắt</span><br /><span>3. Skinner - thợ
-                                                    gội</span><br /><span>4. Lễ tân nữ - Check
-                                                    out</span><br /><span>5. Lễ tân nam</span><br /><span>6.
-                                                    Bảo vệ salon</span><br />
+                                                        <path
+                                                            d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z">
+                                                        </path>
+                                                    </svg>
+                                                </i>{{$category['name']}}
+                                            </div>
+                                            <div class="ant-collapse-content ant-collapse-content-active">
+                                                <div class="ant-collapse-content-box">
+                                                    <div class="text">
+                                                        @foreach($category->job as $key => $job)
+                                                            <a href="{{route('client.job.detail',['id' => $job['id']])}}"
+                                                               class="blank">
+                                                                <span>{{$key + 1}}. {{$job['title']}}</span><br/></a>
+                                                        @endforeach
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="ant-collapse-item ant-collapse-item-active">
-                                        <div class="ant-collapse-header" role="button" tabindex="0"
-                                             aria-expanded="true">
-                                            <i aria-label="icon: right"
-                                               class="anticon anticon-right ant-collapse-arrow"><svg
-                                                    viewBox="64 64 896 896" focusable="false" class="" style="
-                      -ms-transform: rotate(90deg);
-                      transform: rotate(90deg);
-                    " data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                                                    <path
-                                                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z">
-                                                    </path>
-                                                </svg></i>KHỐI VĂN PHÒNG
-                                        </div>
-                                        <div class="ant-collapse-content ant-collapse-content-active">
-                                            <div class="ant-collapse-content-box">
-                                                <div class="text">
-                                                <span>1. Nhân viên kỹ thuật ứng dụng và tự động
-                                                    hóa</span>
-                                                    <br /><span>2. Nhân viên cải tiến và phát triển dịch
-                                                    vụ</span>
-                                                    <br /><span>3. Nhân viên cải tiến quy trình cung ứng hàng
-                                                    hóa</span>
-                                                    <br /><span>4. Nhân viên cả tiến vận hành nội bộ</span>
-                                                    <br /><span>5. Chuyên viên phân tích nghiệp vụ</span>
-                                                    <br /><span>6. Cộng tác viên thanh tra và kiểm soát chất
-                                                    lượng</span>
-                                                    <br /><span>7. Cộng tác viên chăm sóc khách hàng</span>
-                                                    <br /><span>8. Kế toán tổng hợp</span> <br /><a
-                                                        href="it.html" style="color: #111">9. Lập trình viên</a>
-                                                    <br />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -356,7 +262,37 @@
                     <div class="screen-pc">
                         <div class="component-blog">
                             <div class="title">BLOG</div>
-                            <div class="content-body"></div>
+                            <div class="content-body">
+                                @foreach($news as $item)
+                                    <div class="item news-post">
+                                        <div class="ant-row">
+                                            <div class="ant-col ant-col-xs-10 ant-col-sm-10 ant-col-md-7 ant-col-lg-7">
+                                                <div>
+                                                    <a href="{{route('client.news.detail',['id' => $item['id']])}}" class="blank">
+                                                        <img
+                                                            src="{{cxl_storage_news('thumbnail/'.$item['thumbnail'])}}"
+                                                            alt="Icon">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="ant-col ant-col-xs-14 ant-col-sm-14 ant-col-md-17 ant-col-lg-17">
+                                                <div class="content">
+                                                    <div class="title-blog"><span>{{$item['title']}}</span>
+                                                    </div>
+                                                    <div class="text description">
+                                                        <a href="{{route('client.news.detail',['id' => $item['id']])}}" class="blank">
+                                                            <p>
+                                                                {!! $item['description'] !!}
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -368,7 +304,7 @@
                                 <div class="item">
                                     <div class="img">
                                         <img src="{{cxl_asset('client/images/Icon1.png')}}"
-                                             alt="" />
+                                             alt=""/>
                                     </div>
                                     <div class="text">
                                         <div class="content-title">
@@ -383,7 +319,7 @@
                                 <div class="item">
                                     <div class="img">
                                         <img src="{{cxl_asset('client/images/icon2.png')}}"
-                                             alt="" />
+                                             alt=""/>
                                     </div>
                                     <div class="text">
                                         <div class="content-title">LÀM VIỆC LINH HOẠT</div>
@@ -396,7 +332,7 @@
                                 <div class="item">
                                     <div class="img">
                                         <img src="{{cxl_asset('client/images/icon3.png')}}"
-                                             alt="" />
+                                             alt=""/>
                                     </div>
                                     <div class="text">
                                         <div class="content-title">
@@ -411,7 +347,7 @@
                                 <div class="item">
                                     <div class="img">
                                         <img src="{{cxl_asset('client/images/icon4.png')}}"
-                                             alt="" />
+                                             alt=""/>
                                     </div>
                                     <div class="text">
                                         <div class="content-title">TAY NGHỀ GIỎI NHANH</div>
@@ -423,7 +359,7 @@
                                 <div class="item">
                                     <div class="img">
                                         <img src="{{cxl_asset('client/images/icon5.png')}}"
-                                             alt="" />
+                                             alt=""/>
                                     </div>
                                     <div class="text">
                                         <div class="content-title">
@@ -436,26 +372,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-input">
-                                <div>
-                                    <input value="" placeholder="Nhập số điện thoại ..." /><button>ĐĂNG KÍ ỨNG
-                                        TUYỂN</button>
-                                </div>
-                            </div>
                             <div class="img-link">
                                 <img src="{{cxl_asset('client/images/banner/banner-right1.png')}}"
-                                     alt="" style="width: 100%" /><a href="https://30shine.com/about"
-                                                                     target="_blank"><button>GIỚI THIỆU NGAY</button></a>
+                                     alt="" style="width: 100%"/><a href="https://30shine.com/about"
+                                                                    target="_blank">
+                                    <button>GIỚI THIỆU NGAY</button>
+                                </a>
                             </div>
                             <div class="img-link">
                                 <a href="https://www.youtube.com/watch?v=jGh9h67NJjs" target="_blank">
                                     <img src="{{cxl_asset('client/images/banner/youtube1.png')}}"
-                                         alt="" style="width: 100%" /></a>
+                                         alt="" style="width: 100%"/></a>
                             </div>
                             <div class="img-link">
                                 <a href="https://www.youtube.com/watch?v=BFmtApFH2xI" target="_blank">
                                     <img src="{{cxl_asset('client/images/banner/youtube-11.png')}}"
-                                         alt="" style="width: 100%" /></a>
+                                         alt="" style="width: 100%"/></a>
                             </div>
                         </div>
                     </div>

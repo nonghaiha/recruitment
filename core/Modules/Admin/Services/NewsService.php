@@ -34,10 +34,19 @@ class NewsService implements NewsServiceContract
 
                 if ($data['published_at'] == null){
                     $data['published_at'] = Carbon::now();
+                }else{
+                    $data['published_at'] = Carbon::parse($data['published_at'])->format('Y-m-d');
                 }
 
                 if (isset($data['is_publish'])){
                     $data['is_publish'] = 1;
+                }
+
+                if ($request->thumbnail){
+                    $file = $request->thumbnail;
+                    $fileName = generate_random_string(10) . generate_random_string(11) . substr($file->getClientOriginalName(), strpos($file->getClientOriginalName(), '.'));
+                    $file->move(storage_path('app/public/images/thumbnail'),$fileName);
+                    $data['thumbnail'] = $fileName;
                 }
 
                 return $this->newsRepository->store($data);
@@ -57,11 +66,13 @@ class NewsService implements NewsServiceContract
         return false;
     }
 
-    public function update($data)
+    public function update($request)
     {
         // TODO: Implement update() method.
-        if ($data){
-
+        if ($request){
+        $data = $request->all();
+        unset($data['_token']);
+        unset($data['_method']);
             if ($data['published_at'] == null){
                 $data['published_at'] = Carbon::now();
             }
@@ -69,8 +80,13 @@ class NewsService implements NewsServiceContract
             if (isset($data['is_publish'])){
                 $data['is_publish'] = 1;
             }
-
-            return $this->newsRepository->update($data->id,$data->only(['title','description','published_at','is_publish']));
+            if ($request->thumbnail){
+                $file = $request->thumbnail;
+                $fileName = generate_random_string(10) . generate_random_string(11) . substr($file->getClientOriginalName(), strpos($file->getClientOriginalName(), '.'));
+                $file->move(storage_path('app/public/images/thumbnail'),$fileName);
+                $data['thumbnail'] = $fileName;
+            }
+            return $this->newsRepository->update($request->id,$data);
         }
         return false;
     }
@@ -85,5 +101,11 @@ class NewsService implements NewsServiceContract
     {
         // TODO: Implement search() method.
         return $this->newsRepository->search($key);
+    }
+
+    public function pagination()
+    {
+        // TODO: Implement pagination() method.
+        return $this->newsRepository->pagination();
     }
 }

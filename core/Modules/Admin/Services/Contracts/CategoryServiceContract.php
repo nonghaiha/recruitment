@@ -12,4 +12,6 @@ interface CategoryServiceContract
     public function update($data);
 
     public function delete($id);
+
+    public function getAllForClient();
 }

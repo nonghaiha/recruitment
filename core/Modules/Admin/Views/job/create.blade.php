@@ -50,9 +50,9 @@
                             <textarea name="description" id="description" cols="30" rows="10"
                                       class="form-control"></textarea>
                         </div>
-                        @if($errors->has('jd'))
-                            <div class="alert alert-danger">{{ $errors->first('jd') }}</div>
-                        @endif
+                            @if($errors->has('jd'))
+                                <div class="alert alert-danger">{{ $errors->first('jd') }}</div>
+                            @endif
                         <div class="form-group">
                             <label for="importJD">Import JD:</label>
                             <input type="file" id="importJD" accept=".pdf" name="jd">

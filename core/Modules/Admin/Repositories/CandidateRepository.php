@@ -29,4 +29,10 @@ class CandidateRepository implements CandidateRepositoryContract
         // TODO: Implement detail() method.
         return $this->candidateModel->with('job')->find($id);
     }
+
+    public function store($data)
+    {
+        // TODO: Implement store() method.
+        return $this->candidateModel->create($data);
+    }
 }

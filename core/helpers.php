@@ -17,7 +17,7 @@ if (!function_exists('cxl_asset')) {
 if (!function_exists('cxl_storage_admin')){
     function cxl_storage_admin($path)
     {
-        $path = asset('storage/admin/pdf/'.$path);
+        $path = asset('storage/admin/'.$path);
         return $path;
     }
 }
@@ -25,7 +25,14 @@ if (!function_exists('cxl_storage_admin')){
 if (!function_exists('cxl_storage_client')){
     function cxl_storage_client($path)
     {
-        $path = asset('storage/client/pdf/'.$path);
+        $path = asset('storage/client/'.$path);
+        return $path;
+    }
+}
+if (!function_exists('cxl_storage_news')){
+    function cxl_storage_news($path)
+    {
+        $path = asset('storage/images/'.$path);
         return $path;
     }
 }
@@ -33,5 +40,19 @@ if (!function_exists('cxl_storage_client')){
 if(!function_exists('show_pdf')){
     function show_pdf($path){
         return response()->file($path);
+    }
+}
+
+if (!function_exists('generate_random_string')) {
+    function generate_random_string($length = 10)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        return $randomString;
     }
 }

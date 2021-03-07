@@ -11,7 +11,8 @@
                         Create News for 30Shine
                     </h3>
                 </div>
-                <form action="{{route('admin.news.update',['id' => $data['id']])}}" role="form" method="POST">
+                <form action="{{route('admin.news.update',['id' => $data['id']])}}" role="form" method="POST"
+                      enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="box-body">
@@ -29,13 +30,19 @@
                             </textarea>
                         </div>
                         <div class="form-group">
+                            <label for="">Thumbnail:</label>
+                            <input type="file" name="thumbnail" id="thumnail" accept="image/*">
+                            <span class="thumbnail-news">{{$data['thumbnail'] != null ? $data['thumbnail'] : ''}}</span>
+                        </div>
+                        <div class="form-group">
                             <label>Publish At:</label>
 
                             <div class="input-group date">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control pull-right" id="datepicker" name="published_at" value="{{$data['published_at']}}">
+                                <input type="text" class="form-control pull-right" id="datepicker" name="published_at"
+                                       value="{{$data['published_at']}}">
                             </div>
                             <!-- /.input group -->
                         </div>
@@ -43,7 +50,8 @@
                             <label for="">
                                 Publish:
                             </label>
-                            <input type="checkbox" name="is_publish" id="is_publish" style="display: none" {{$data['is_publish'] == 1 ? 'checked="checked   "' : ''}}>
+                            <input type="checkbox" name="is_publish" id="is_publish"
+                                   style="display: none" {{$data['is_publish'] == 1 ? 'checked="checked   "' : ''}}>
                             <div class="toggle-icon {{$data['is_publish'] == 1 ? 'active' : ''}}">
                                 <a href="javascript:void(0)"></a>
                             </div>
@@ -63,18 +71,22 @@
         $(function () {
             $('#datepicker').datepicker({
                 locale: 'en',
-                autoclose:true,
+                autoclose: true,
             });
 
             CKEDITOR.replace('description');
 
-            $('.toggle-icon').on('click',function () {
+            $('.toggle-icon').on('click', function () {
                 $(this).toggleClass('active');
-                if($(this).hasClass('active')){
-                    $('#is_publish').attr('checked','checked');
-                }else{
+                if ($(this).hasClass('active')) {
+                    $('#is_publish').attr('checked', 'checked');
+                } else {
                     $('#is_publish').removeAttr('checked');
                 }
+            })
+            $(document).on('change', '#thumbnail', function () {
+                let file = $(this)[0].files[0].name;
+                $('.thumbnail-news').html(file);
             })
         });
     </script>

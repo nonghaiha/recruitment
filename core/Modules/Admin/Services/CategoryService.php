@@ -43,4 +43,10 @@ class CategoryService implements CategoryServiceContract
         // TODO: Implement delete() method.
         return $this->categoryRepository->delete($id);
     }
+
+    public function getAllForClient()
+    {
+        // TODO: Implement getAllForClient() method.
+        return $this->categoryRepository->getAllForClient();
+    }
 }

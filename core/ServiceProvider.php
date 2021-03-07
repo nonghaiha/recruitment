@@ -86,10 +86,12 @@ Class ServiceProvider extends SupportServiceProvider
                 CmsSetupCommand::class
             ]);
         }
+
     }
 
     public function register()
     {
         $this->app->register(CoreServiceProvider::class);
+
     }
 }

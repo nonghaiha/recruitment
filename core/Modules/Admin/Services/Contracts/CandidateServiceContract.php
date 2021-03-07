@@ -6,4 +6,6 @@ interface CandidateServiceContract
     public function getAll();
 
     public function find($id);
+
+    public function store($request);
 }

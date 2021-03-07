@@ -45,7 +45,7 @@
                                 <td>{{$value['title']}}</td>
                                 <td>{!! $value['description'] !!}</td>
                                 <td>
-                                    <a href="{{cxl_storage_admin($value['jd'])}}" target="_blank">{{$value['jd']}}</a>
+                                    <a href="{{cxl_storage_admin('pdf/'.$value['jd'])}}" target="_blank">{{$value['jd']}}</a>
                                 </td>
                                 <td>{{$value['number_of_employees']}}</td>
                                 <td>{{$value['salary']}}</td>

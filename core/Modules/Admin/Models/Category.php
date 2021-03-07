@@ -22,4 +22,9 @@ class Category extends Model
         return $this->hasMany(Job::class)->with('find_branch_location');
     }
 
+    public function same_job()
+    {
+        return $this->hasMany(Job::class);
+    }
+
 }

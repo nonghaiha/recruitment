@@ -31,6 +31,11 @@ class Job extends Model
         return $this->belongsTo(Category::class,'category_id');
     }
 
+    public function find_same_job()
+    {
+        return $this->category()->with('same_job');
+    }
+
     public function candidates()
     {
         return $this->hasMany(Candidate::class);

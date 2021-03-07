@@ -18,13 +18,13 @@ class JobRepository implements JobRepositoryContract
     public function getAll()
     {
         // TODO: Implement getAll() method.
-        return $this->jobModel->with('category')->orderBy('id','desc')->get();
+        return $this->jobModel->with('category','find_branch_location')->orderBy('id','desc')->get();
     }
 
     public function find($id)
     {
         // TODO: Implement find() method.
-        return $this->jobModel->with('category')->find($id);
+        return $this->jobModel->with('category','find_same_job','job_location','find_branch_location')->find($id);
     }
 
     public function findByCategoryID($id)

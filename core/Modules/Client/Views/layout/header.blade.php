@@ -3,7 +3,7 @@
 <!-- Mirrored from tuyendung.30shine.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 10:17:56 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-
+<title>@yield('title')</title>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
@@ -18,10 +18,12 @@
     <link rel="preload" href="{{cxl_asset('client/_next/static/chunks/commons.ba86c38952f558b0d655.js')}}" as="script" />
     <link rel="preload" href="{{cxl_asset('client/_next/static/chunks/styles.78    c70f04ad5b9dbbf819.js')}}" as="script" />
     <link rel="preload" href="{{cxl_asset('client/_next/static/runtime/main-ea8f0e424df89d95fe25.js')}}" as="script" />
+    <link rel="stylesheet" href="{{cxl_asset('admin/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{cxl_asset('admin/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{cxl_asset('client/css/style.css')}}">
 </head>
 
-<body>
+<body id="@yield('bodyID')">
     <div id="__next">
         <div class="index">
             <div class="nav">
@@ -53,7 +55,7 @@
                             </svg></i>
                     </div>
                     <div class="item-link"><a href="{{route('client.home')}}">TRANG CHỦ</a></div>
-                    <div class="item-link"><a href="{{route('client.blog')}}">BLOG</a></div>
+                    <div class="item-link"><a href="{{route('client.news.index')}}">BLOG</a></div>
                     <div class="item-link">
                         <a href="{{route('client.listQuestion')}}">CÂU HỎI THƯỜNG GẶP</a>
                     </div>

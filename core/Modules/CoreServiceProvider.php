@@ -23,6 +23,7 @@ use Core\Modules\Admin\Services\Contracts\NewsServiceContract;
 use Core\Modules\Admin\Services\JobService;
 use Core\Modules\Admin\Services\LocationService;
 use Core\Modules\Admin\Services\NewsService;
+use Core\Modules\Client\ViewComposer;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
@@ -63,6 +64,8 @@ class CoreServiceProvider extends ServiceProvider
                 $this->loadViewsFrom($pathFolView, $module);
             }
         }
+
+        view()->composer('*',ViewComposer::class);
 
 
 

@@ -16,7 +16,8 @@ class News extends Model
         'created_at',
         'updated_at',
         'published_at',
-        'is_publish'
+        'is_publish',
+        'thumbnail'
     ];
 
     protected $hidden = [];

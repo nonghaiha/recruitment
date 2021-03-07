@@ -41,4 +41,10 @@ class CategoryRepository implements CategoryRepositoryContract
         // TODO: Implement delete() method.
         return $this->categoryModel->where('id',$id)->delete();
     }
+
+    public function getAllForClient()
+    {
+        // TODO: Implement getAllForClient() method.
+        return $this->categoryModel->with('job')->get();
+    }
 }

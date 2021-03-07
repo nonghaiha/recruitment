@@ -17,7 +17,10 @@
 </div>
 </div>
 </div>
-
+<script src="{{cxl_asset('admin/js/jquery.min.js')}}"></script>
+<script src="{{cxl_asset('admin/js/jquery-ui.js')}}"></script>
+<script src="{{cxl_asset('admin/js/bootstrap.min.js')}}"></script>
+@yield('script')
 </body>
 <!-- Mirrored from tuyendung.30shine.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 10:18:07 GMT -->
 

@@ -30,4 +30,26 @@ class CandidateService implements CandidateServiceContract
         $data['time_apply'] = Carbon::parse($data['created_at'])->diffForHumans(Carbon::now());
         return $data;
     }
+
+    public function store($request)
+    {
+        // TODO: Implement store() method.
+        $data = $request->all();
+        if ($data){
+            if ($request->avatar){
+                $file = $request->avatar;
+                $fileName = generate_random_string(10) . generate_random_string(11) . substr($file->getClientOriginalName(), strpos($file->getClientOriginalName(), '.'));
+                $file->move(storage_path('app/public/client/avatar'),$fileName);
+                $data['avatar'] = $fileName;
+            }
+            if (isset($request->cv)){
+                $file = $request->cv;
+                $fileName = $file->getClientOriginalName();
+                $file->move(storage_path('app/public/client/pdf'),$fileName);
+                $data['cv'] = $fileName;
+            }
+            return $this->candidateRepository->store($data);
+        }
+        return false;
+    }
 }

@@ -9,7 +9,7 @@
                         Create News for 30Shine
                     </h3>
                 </div>
-                <form action="{{route('admin.news.store')}}" role="form" method="POST">
+                <form action="{{route('admin.news.store')}}" role="form" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
                         @if($errors->has('title'))
@@ -24,6 +24,11 @@
                             <textarea name="description" id="description" cols="30" rows="10" class="form-control">
                                 {{old('description')}}
                             </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Thumbnail:</label>
+                            <input type="file" name="thumbnail" id="thumnail" accept="image/*">
+                            <span class="thumbnail-news"></span>
                         </div>
                         <div class="form-group">
                             <label>Publish At:</label>
@@ -59,18 +64,23 @@
         $(function () {
             $('#datepicker').datepicker({
                 locale: 'en',
-                autoclose:true,
+                autoclose: true,
             });
 
             CKEDITOR.replace('description');
 
-            $('.toggle-icon').on('click',function () {
+            $('.toggle-icon').on('click', function () {
                 $(this).toggleClass('active');
-                if($(this).hasClass('active')){
-                    $('#is_publish').attr('checked','checked');
-                }else{
+                if ($(this).hasClass('active')) {
+                    $('#is_publish').attr('checked', 'checked');
+                } else {
                     $('#is_publish').removeAttr('checked');
                 }
+            })
+
+            $(document).on('change', '#thumbnail', function () {
+                let file = $(this)[0].files[0].name;
+                $('.thumbnail-news').html(file);
             })
         });
     </script>

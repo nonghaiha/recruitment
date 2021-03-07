@@ -14,4 +14,6 @@ interface NewsRepositoryContract
     public function delete($id);
 
     public function search($key);
+
+    public function pagination();
 }

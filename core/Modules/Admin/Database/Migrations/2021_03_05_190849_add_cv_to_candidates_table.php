@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddJdToCandidatesTable extends Migration
+class AddCvToCandidatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddJdToCandidatesTable extends Migration
     public function up()
     {
         Schema::table('candidates', function (Blueprint $table) {
-            $table->string('jd')->nullable();
+            $table->string('cv')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddJdToCandidatesTable extends Migration
     public function down()
     {
         Schema::table('candidates', function (Blueprint $table) {
-            $table->dropColumn('jd');
+            $table->dropColumn('cv');
         });
     }
 }

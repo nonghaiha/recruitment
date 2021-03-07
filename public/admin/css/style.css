@@ -95,3 +95,10 @@
     display: flex;
     justify-content: space-between;
 }
+.img-news{
+    width: 157px;
+    height: 150px;
+    padding: 0;
+    border-radius: 8px;
+    object-fit: contain;
+}

@@ -56,4 +56,13 @@ class NewsRepository implements NewsRepositoryContract
             ->orWhere("users.name","LIKE","%{$key}%")
             ->get();
     }
+
+    public function pagination()
+    {
+        // TODO: Implement pagination() method.
+        return $this->newsModel
+            ->with('author')
+            ->orderBy('id','desc')->paginate(15);
+
+    }
 }

@@ -15,12 +15,12 @@ class CreateJobLocationTable extends Migration
     {
         Schema::create('job_location', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('job_id');
+            $table->unsignedBigInteger('job_id')->unique();
             $table->unsignedBigInteger('location_id');
             $table->foreign('job_id')->references('id')->on('jobs')
                 ->onUpdate('cascade')->onDelete('cascade');
                 $table->foreign('location_id')->references('id')->on('locations')
-                ->onUpdate('cascade')->onDelete('cascade');   
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

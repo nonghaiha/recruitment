@@ -9,9 +9,11 @@ interface NewsServiceContract
 
     public function find($id);
 
-    public function update($data);
+    public function update($request);
 
     public function delete($id);
 
     public function search($key);
+
+    public function pagination();
 }

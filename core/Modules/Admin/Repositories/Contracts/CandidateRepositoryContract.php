@@ -6,4 +6,6 @@ interface CandidateRepositoryContract
     public function getAll();
 
     public function find($id);
+
+    public function store($data);
 }
