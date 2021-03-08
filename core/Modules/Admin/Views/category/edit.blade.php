@@ -6,7 +6,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border text-center">
                     <h3 class="box-title">
-                        Create Department of 30Shine
+                        Chỉnh sửa phòng ban 30Shine
                     </h3>
                 </div>
                 <form action="{{route('admin.category.update',['id' => $data['id']])}}" role="form" method="POST">
@@ -17,11 +17,11 @@
                             <div class="alert alert-danger">{{ $errors->first('name') }}</div>
                         @endif
                         <div class="form-group">
-                            <label for="nameCategory">Name</label>
+                            <label for="nameCategory">Tên</label>
                             <input type="text" name="name" id="nameCategory" placeholder="Enter name of Department" class="form-control" value="{{$data['name']}}">
                         </div>
                         <div class="form-group">
-                            <label for="">Description</label>
+                            <label for="">Mô tả chi tiết</label>
                             <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{$data['description']}}</textarea>
                         </div>
                         @if($errors->has('tag'))
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                     </div>
                 </form>
             </div>

@@ -25,9 +25,9 @@
                     30SHINE
                 </h1>
                 <div class="col-xs-12 text-center">
-                    <p>Company: Công ty Cổ phần Thương mại Dịch vụ 30Shine</p>
-                    <p>Tax: 0107467693</p>
-                    <p>Address: Số 82 Trần Đại Nghĩa, phường Đồng Tâm, quận Hai Bà Trưng,
+                    <p>Tên công ty: Công ty Cổ phần Thương mại Dịch vụ 30Shine</p>
+                    <p>Mã số thuế: 0107467693</p>
+                    <p>Địa chỉ: Số 82 Trần Đại Nghĩa, phường Đồng Tâm, quận Hai Bà Trưng,
                         Hà Nội
                     </p>
                 </div>
@@ -35,11 +35,14 @@
             <section class="content">
                 <h3 class="text-center">{{$title}}</h3>
                 <div class="box-body">
-                    <p>{!! $description !!}</p>
-                    <p>Number Of Employees: {{$number_of_employees}}</p>
-                    <p>Salary: {{$salary}}</p>
-                    <p class="text-right">Apply:{{$applied_at}}</p>
-                    <p class="text-right">End:{{$ended_at}}</p>
+                    <p>Mô tả chi tiết:
+                        <br>
+                        {!! $description !!}
+                    </p>
+                    <p>Số lượng ứng viên: {{$number_of_employees}}</p>
+                    <p>Mức lương: {{$salary}}</p>
+                    <p class="text-right">Thời gian ứng tuyển:{{$applied_at}}</p>
+                    <p class="text-right">Thời gian kết thúc:{{$ended_at}}</p>
                 </div>
             </section>
         </div>

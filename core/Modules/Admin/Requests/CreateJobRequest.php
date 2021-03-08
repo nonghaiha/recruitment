@@ -24,6 +24,7 @@ class CreateJobRequest extends FormRequest
     public function rules()
     {
         return [
+            'branch_location' => ['required'],
             'category_id' => ['required'],
             'title' => ['required'],
             'description' => ['required'],

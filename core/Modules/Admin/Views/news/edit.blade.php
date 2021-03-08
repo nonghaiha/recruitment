@@ -8,7 +8,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border text-center">
                     <h3 class="box-title">
-                        Create News for 30Shine
+                       Tin tức về 30Shine
                     </h3>
                 </div>
                 <form action="{{route('admin.news.update',['id' => $data['id']])}}" role="form" method="POST"
@@ -20,22 +20,22 @@
                             <div class="alert alert-danger">{{ $errors->first('title') }}</div>
                         @endif
                         <div class="form-group">
-                            <label for="">Tittle</label>
+                            <label for="">Tiêu đề</label>
                             <input type="text" name="title" class="form-control" value="{{$data['title']}}">
                         </div>
                         <div class="form-group">
-                            <label for="">Description</label>
+                            <label for="">Mô tả chi tiết</label>
                             <textarea name="description" id="description" cols="30" rows="10" class="form-control">
                                 {!! $data['description'] !!}
                             </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">Thumbnail:</label>
+                            <label for="">Ảnh đại diện :</label>
                             <input type="file" name="thumbnail" id="thumnail" accept="image/*">
                             <span class="thumbnail-news">{{$data['thumbnail'] != null ? $data['thumbnail'] : ''}}</span>
                         </div>
                         <div class="form-group">
-                            <label>Publish At:</label>
+                            <label>Thời gian công khai:</label>
 
                             <div class="input-group date">
                                 <div class="input-group-addon">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group check-publish">
                             <label for="">
-                                Publish:
+                                Công khai:
                             </label>
                             <input type="checkbox" name="is_publish" id="is_publish"
                                    style="display: none" {{$data['is_publish'] == 1 ? 'checked="checked   "' : ''}}>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                     </div>
                 </form>
             </div>

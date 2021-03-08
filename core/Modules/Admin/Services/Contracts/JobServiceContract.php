@@ -16,4 +16,6 @@ interface JobServiceContract
     public function delete($id);
 
     public function search($key);
+
+    public function findByKeyWord($request);
 }

@@ -102,3 +102,12 @@
     border-radius: 8px;
     object-fit: contain;
 }
+.description-news{
+    display: block;
+    max-width: 500px;
+    height: 150px;
+    overflow: hidden;
+}
+.title-news{
+    width: 20%;
+}

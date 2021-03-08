@@ -10,7 +10,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border text-center">
                     <h3 class="box-title">
-                        Create Job of 30Shine
+                        Tạo việc làm mới cho 30Shine
                     </h3>
                 </div>
                 <form action="{{route('admin.job.store')}}" method="POST" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
                             <div class="alert alert-danger">{{ $errors->first('branch_location') }}</div>
                         @endif
                         <div class="form-group">
-                            <label for="">Branch Location:</label>
+                            <label for="">Cơ sở làm việc:</label>
                             <select name="branch_location" id="" class="form-control" style="width: 20%">
                                 @foreach($locations as $location)
                                     <option value="{{$location['id']}}">{{ $location['street'] . ',' . $location['city'] . ',' . $location['country'] }}</option>
@@ -31,7 +31,7 @@
                             <div class="alert alert-danger">{{ $errors->first('category_id') }}</div>
                         @endif
                         <div class="form-group">
-                            <label for="">Department:</label>
+                            <label for="">Phòng ban:</label>
                             <select name="category_id" id="" class="form-control" style="width: 20%">
                                 @foreach($categories as $category)
                                     <option value="{{$category['id']}}">{{$category['name']}}</option>
@@ -42,11 +42,11 @@
                             <div class="alert alert-danger">{{ $errors->first('title') }}</div>
                         @endif
                         <div class="form-group">
-                            <label for="">Title:</label>
+                            <label for="">Tên công việc:</label>
                             <input type="text" class="form-control" name="title">
                         </div>
                         <div class="form-group">
-                            <label for="">Description:</label>
+                            <label for="">Mô tả chi tiết:</label>
                             <textarea name="description" id="description" cols="30" rows="10"
                                       class="form-control"></textarea>
                         </div>
@@ -54,19 +54,19 @@
                                 <div class="alert alert-danger">{{ $errors->first('jd') }}</div>
                             @endif
                         <div class="form-group">
-                            <label for="importJD">Import JD:</label>
+                            <label for="importJD">Thêm JD:</label>
                             <input type="file" id="importJD" accept=".pdf" name="jd">
                         </div>
                         <div class="form-group" style="width: 20%">
-                            <label for="">Number of Employees:</label>
+                            <label for="">Số lượng ứng viên:</label>
                             <input type="number" class="form-control" name="number_of_employees">
                         </div>
                         <div class="form-group">
-                            <label for="">Salary:</label>
+                            <label for="">Mức lương:</label>
                             <input type="number" class="form-control" name="salary">
                         </div>
                         <div class="form-group">
-                            <label>Applied At:</label>
+                            <label>Thời gian ứng tuyển:</label>
 
                             <div class="input-group date">
                                 <div class="input-group-addon">
@@ -80,7 +80,7 @@
                             <div class="alert alert-danger">{{ $errors->first('ended_at') }}</div>
                         @endif
                         <div class="form-group">
-                            <label>Ended At:</label>
+                            <label>Thời gian kết thúc:</label>
 
                             <div class="input-group date">
                                 <div class="input-group-addon">
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                     </div>
                 </form>
             </div>

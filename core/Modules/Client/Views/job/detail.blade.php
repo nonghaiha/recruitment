@@ -26,7 +26,7 @@
                 @endif
 
                 <div class="list-related" id="related">
-                    <div class="name">Vị trí cùng khác tại TheCoffeeHouse</div>
+                    <div class="name">Vị trí cùng khác tại 30Shine</div>
                     @foreach($data->find_same_job->same_job as $key =>  $same_job)
                         <a href="{{route('client.job.detail',['id' => $same_job['id']])}}">{{$same_job['title']}}</a>
                     @endforeach

@@ -7,12 +7,12 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Jobs for 30Shine</h3>
+                    <h3 class="box-title">Các công việc cho 30Shine</h3>
 
                     <div class="box-tools">
-                        <a href="{{route('admin.job.create')}}" class="btn btn-info">Create</a>
+                        <a href="{{route('admin.job.create')}}" class="btn btn-info">Thêm</a>
                         <div class="input-group input-group-sm hidden-xs" style="width: 300px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Tìm kiếm ...">
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default" id="searchJobs"><i
@@ -26,14 +26,14 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Department</th>
-                            <th>Title</th>
-                            <th class="col-xs-3">Description</th>
+                            <th>Phòng ban</th>
+                            <th>Tên công việc</th>
+                            <th class="col-xs-3">Mô tả chi tiết</th>
                             <th>JD</th>
-                            <th class="col-xs-1">Number of Employees</th>
-                            <th>Salary</th>
-                            <th>Applied At</th>
-                            <th>Ended At</th>
+                            <th class="col-xs-1">Số lượng ứng viên</th>
+                            <th>Mức lương</th>
+                            <th>Thời gian ứng tuyển</th>
+                            <th>Thời gian kết thúc</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -43,7 +43,7 @@
                                 <td>{{$value['id']}}</td>
                                 <td>{{$value->category->name}}</td>
                                 <td>{{$value['title']}}</td>
-                                <td>{!! $value['description'] !!}</td>
+                                <td class="description-news">{!! $value['description'] !!}</td>
                                 <td>
                                     <a href="{{cxl_storage_admin('pdf/'.$value['jd'])}}" target="_blank">{{$value['jd']}}</a>
                                 </td>
@@ -53,14 +53,14 @@
                                 <td>{{$value['ended_at']}}</td>
                                 <td>
                                     <a href="{{route('admin.document.getFile',['id' => $value['id']])}}"
-                                       class="btn btn-info">Generate PDF</a>
+                                       class="btn btn-info">Tạo file PDF</a>
                                     <a href="{{route('admin.job.edit',['id' => $value['id']])}}"
-                                       class="btn btn-warning">Edit</a>
+                                       class="btn btn-warning">Sửa</a>
                                     <form action="{{route('admin.job.delete',['id' => $value['id']])}}" method="POST"
                                           style="display: inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
                                     </form>
                                 </td>
                             </tr>
@@ -114,7 +114,7 @@
                                         '                                <td>' + id + '</td>\n' +
                                         '                                <td>' + department + '</td>\n' +
                                         '                                <td>' + title + '</td>\n' +
-                                        '                                <td>' + description + '</td>\n' +
+                                        '                                <td class="description-news">' + description + '</td>\n' +
                                         '                                <td>\n' +
                                         '                                    <a href="' + url_jd + '" target="_blank">' + jd + '</a>\n' +
                                         '                                </td>\n' +

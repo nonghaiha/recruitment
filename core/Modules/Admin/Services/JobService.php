@@ -3,6 +3,7 @@ namespace Core\Modules\Admin\Services;
 
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use Core\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\JobLocationRepositoryContract;
 use Core\Modules\Admin\Repositories\Contracts\JobRepositoryContract;
 use Core\Modules\Admin\Services\Contracts\JobServiceContract;
@@ -12,14 +13,17 @@ class JobService implements JobServiceContract
 {
     protected $jobRepository;
     protected $jobLocationRepository;
+    protected $categoryRepository;
     public function __construct
     (
         JobRepositoryContract $jobRepository,
-        JobLocationRepositoryContract $jobLocationRepository
+        JobLocationRepositoryContract $jobLocationRepository,
+        CategoryRepositoryContract $categoryRepository
     )
     {
         $this->jobRepository = $jobRepository;
         $this->jobLocationRepository = $jobLocationRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     public function getAll()
@@ -53,6 +57,8 @@ class JobService implements JobServiceContract
 
             if ($data['applied_at'] == null) {
                 $data['applied_at'] = Carbon::now();
+            }else{
+                $data['applied_at'] = Carbon::parse($data['applied_at'])->format('Y-m-d');
             }
 
             $data['ended_at'] = Carbon::parse($data['ended_at'])->format('Y-m-d');
@@ -115,5 +121,32 @@ class JobService implements JobServiceContract
     {
         // TODO: Implement search() method.
         return $this->jobRepository->search($key);
+    }
+
+    public function findByKeyWord($request)
+    {
+        // TODO: Implement findByKeyWord() method.
+        $data = array();
+        if (isset($request->category)) {
+            $dataCategory = $this->jobRepository->searchByCategory($request->category);
+            foreach ($dataCategory as $value){
+                $data[] = $value;
+            }
+        }
+        if (isset($request->location)) {
+            $dataLocation = $this->jobLocationRepository->searchJobByLocation($request->location);
+            foreach ($dataLocation as $value){
+                if ($value->jobs){
+                    $data[] = $value->jobs;
+                }
+            }
+        }
+        foreach ($data as $key => $value)
+        {
+            $categoryName = $this->categoryRepository->find($value['category_id']);
+            $value['address'] = $categoryName['name'];
+        }
+        return $data;
+
     }
 }

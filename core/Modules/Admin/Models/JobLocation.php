@@ -24,9 +24,14 @@ class JobLocation extends Model
         return $this->belongsTo(Job::class,'job_id');
     }
 
+    public function category()
+    {
+        return $this->jobs()->with('category');
+    }
+
     public function locations()
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class,'location_id');
     }
 
 }

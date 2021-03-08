@@ -40,9 +40,9 @@
                             <tr>
                                 <td>{{$value['id']}}</td>
                                 <td>{{$value->author->name}}</td>
-                                <td>{{$value['title']}}</td>
+                                <td class="title-news">{{$value['title']}}</td>
                                 <td><img src="{{cxl_storage_news('thumbnail/'.$value['thumbnail'])}}" alt="" class="img-news"></td>
-                                <td>{!! $value['description'] !!}</td>
+                                <td class="description-news">{!! $value['description'] !!}</td>
                                 <td>{{ $value['published_at'] }}</td>
                                 <td><span
                                         class="label {{$value['is_publish'] == 1 ? 'label-success' : 'label-warning'}}">{{ $value['is_publish'] == 1 ? 'Posted' : 'Pending' }}</span>

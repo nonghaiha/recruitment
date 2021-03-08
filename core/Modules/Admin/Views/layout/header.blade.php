@@ -46,11 +46,11 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Haiha</span>
+              <span class="hidden-xs">{{auth()->user()->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <li><a href="">Profile</a></li>
-              <li><a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
+              <li><a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Đăng xuất</a></li>
             </ul>
           </li>
 
@@ -74,34 +74,34 @@
       <ul class="sidebar-menu" data-widget="tree">
       	 <li>
           <a href="{{route('admin.home')}}">
-            <i class="fa fa-home"></i> <span>Dashboard</span>
+            <i class="fa fa-home"></i> <span>Trang chủ</span>
           </a>
         </li>
         <li>
           <a href="{{route('admin.category.index')}}">
-            <i class="fa fa-bookmark"></i> <span>Department</span>
+            <i class="fa fa-bookmark"></i> <span>Phòng ban</span>
           </a>
         </li>
         <li>
           <a href="{{route('admin.job.index')}}">
-            <i class="fa fa-shopping-cart"></i> <span>Jobs</span>
+            <i class="fa fa-shopping-cart"></i> <span>Công việc</span>
           </a>
         </li>
        <li>
           <a href="{{route('admin.candidate.index')}}">
-            <i class="fa fa-users"></i> <span>Candidates</span>
+            <i class="fa fa-users"></i> <span>Ứng viên</span>
           </a>
         </li>
         <li>
           <a href="{{route('admin.news.index')}}">
             <i class="fa fa-book"></i>
-            <span>News</span>
+            <span>Tin tức</span>
           </a>
         </li>
           <li>
           <a href="{{route('admin.location.index')}}">
             <i class="fa fa-industry"></i>
-            <span>Branch Location</span>
+            <span>Cơ sở làm việc</span>
           </a>
         </li>
       </ul>

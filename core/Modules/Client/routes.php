@@ -13,6 +13,7 @@ Route::group([
         Route::get('/','HomeController@index')->name('client.home');
 
         Route::get('/list-question','HomeController@listQuestion')->name('client.listQuestion');
+        Route::get('/about-us','HomeController@aboutUs')->name('client.aboutUs');
 
         //JOB
         Route::group(['prefix' => 'job'],function (){

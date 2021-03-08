@@ -16,4 +16,6 @@ interface JobRepositoryContract
     public function delete($id);
 
     public function search($key);
+
+    public function searchByCategory($category);
 }

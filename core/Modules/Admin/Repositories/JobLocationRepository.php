@@ -20,4 +20,10 @@ class JobLocationRepository  implements JobLocationRepositoryContract
         // TODO: Implement store() method.
         return $this->jobLocationModel->create($data);
     }
+
+    public function searchJobByLocation($location)
+    {
+        // TODO: Implement searchJobByLocation() method.
+        return $this->jobLocationModel->where('location_id',$location)->with('jobs','category')->get();
+    }
 }

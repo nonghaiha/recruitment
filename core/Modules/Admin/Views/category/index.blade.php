@@ -11,8 +11,8 @@
             <table class="table table-striped table-hover text-center">
                 <thead>
                     <th>#NO</th>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 40%">Description</th>
+                    <th style="width: 20%">Tên phòng ban</th>
+                    <th style="width: 40%">Mô tả chi tiết</th>
                     <th></th>
                     <th></th>
                 </thead>
@@ -23,11 +23,11 @@
                         <td>{{ $value['name'] }}</td>
                         <td>{!! $value['description'] !!}</td>
                         <td>
-                            <a href="{{route('admin.category.edit',['id' => $value['id']])}}" class="btn btn-warning">Edit</a>
+                            <a href="{{route('admin.category.edit',['id' => $value['id']])}}" class="btn btn-warning">Sửa</a>
                             <form action="{{route('admin.category.delete',['id' => $value['id']])}}" method="POST" style="display: inline-block">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Xóa</button>
                             </form>
                         </td>
                     </tr>

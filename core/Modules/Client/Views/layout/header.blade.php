@@ -59,6 +59,9 @@
                     <div class="item-link">
                         <a href="{{route('client.listQuestion')}}">CÂU HỎI THƯỜNG GẶP</a>
                     </div>
+                    <div class="item-link">
+                        <a href="{{route('client.aboutUs')}}">VỀ CHÚNG TÔI</a>
+                    </div>
                 </div>
                 <div class="back-drop" style="
               position: fixed;
@@ -93,25 +96,23 @@
                                 <div class="dropdown-country ant-select ant-select-enabled">
                                     <select class="ant-select-selection ant-select-selection--single" role="combobox"
                                         aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false"
-                                        tabindex="0" style="width: 100%">
+                                        tabindex="0" style="width: 100%" name="location">
                                         <option class="ant-select-selection__rendered1">
                                             <div class="ant-select-selection-selected-value" title="Miền Bắc"
-                                                style="display: block; opacity: 1">
-                                                Miền Bắc
-                                            </div>
-                                        </option>
-                                        <option class="ant-select-selection__rendered1">
-                                            <div class="ant-select-selection-selected-value" title="Miền Trung"
-                                                style="display: block; opacity: 1">
-                                                Miền Trung
-                                            </div>
-                                        </option>
-                                        <option class="ant-select-selection__rendered1">
-                                            <div class="ant-select-selection-selected-value" title="Miền Nam"
                                                  style="display: block; opacity: 1">
-                                                Miền Nam
+                                                --Chọn 1 khu vực
                                             </div>
                                         </option>
+                                        @if(isset($locations))
+                                        @foreach($locations as $location)
+                                            <option class="ant-select-selection__rendered1" value="{{$location['id']}}">
+                                                <div class="ant-select-selection-selected-value" title="Miền Bắc"
+                                                     style="display: block; opacity: 1">
+                                                    {{$location['city']}}
+                                                </div>
+                                            </option>
+                                            @endforeach
+                                        @endif
                                         <span class="ant-select-arrow" style="user-select: none; -webkit-user-select: none"
                                             unselectable="on"><i aria-label="icon: down"
                                                 class="anticon anticon-down ant-select-arrow-icon"><svg
@@ -126,7 +127,13 @@
                                 <div class="dropdown-district ant-select ant-select-enabled">
                                     <select class="ant-select-selection ant-select-selection--single" role="combobox"
                                         aria-autocomplete="list" aria-haspopup="true" aria-controls="" aria-expanded="false"
-                                        tabindex="0" style="width: 100%" name="search">
+                                        tabindex="0" style="width: 100%" name="category">
+                                        <option class="ant-select-selection__rendered" value="">
+                                            <div class="ant-select-selection-selected-value" title="--Chọn vị trí--"
+                                                 style="display: block; opacity: 1">
+                                                --Chọn một phòng ban
+                                            </div>
+                                        </option>
                                         @if(isset($categories))
                                             @foreach($categories as $category)
                                                 <option class="ant-select-selection__rendered" value="{{$category['id']}}">

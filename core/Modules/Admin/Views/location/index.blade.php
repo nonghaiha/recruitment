@@ -9,12 +9,12 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Branch Location for 30Shine</h3>
+                    <h3 class="box-title">Các cơ sở của 30Shine</h3>
 
                     <div class="box-tools">
-                        <a href="{{route('admin.location.create')}}" class="btn btn-info">Create</a>
+                        <a href="{{route('admin.location.create')}}" class="btn btn-info">Tạo mới</a>
                         <div class="input-group input-group-sm hidden-xs" style="width: 300px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Tìm kiếm ...">
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default" id="searchLocations"><i
@@ -28,11 +28,11 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Street</th>
-                            <th>City</th>
-                            <th>Country</th>
-                            <th>Zip</th>
-                            <th>Post Code</th>
+                            <th>Đường</th>
+                            <th>Thành phố</th>
+                            <th>Quốc gia</th>
+                            <th>Mã bưu chính</th>
+                            <th>Mã bưu điện</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -47,13 +47,13 @@
                                 <td>{{$values['post_code']}}</td>
                                 <td>
                                     <a href="{{route('admin.location.edit',['id' => $values['id']])}}"
-                                       class="btn btn-warning">Edit</a>
+                                       class="btn btn-warning">Sửa</a>
                                     <form action="{{route('admin.location.delete',['id' => $values['id']])}}"
                                           method="POST"
                                           style="display: inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
                                     </form>
                                 </td>
                             </tr>

@@ -38,7 +38,7 @@
                                             <div class="box-title">
                                                 <strong>
                                                     <i class="fa fa-phone margin-r-5"></i>
-                                                    Phone
+                                                    Số điện thoại
                                                 </strong>
                                             </div>
                                             <div class="box-body">
@@ -50,7 +50,7 @@
                                             <div class="box-title">
                                                 <strong>
                                                     <i class="fa fa-address-book margin-r-5"></i>
-                                                    Address
+                                                    Địa chỉ
                                                 </strong>
                                             </div>
                                             <div class="box-body">
@@ -62,7 +62,7 @@
                                             <div class="box-title">
                                                 <strong>
                                                     <i class="fa fa-sticky-note margin-r-5"></i>
-                                                    Experience
+                                                    Kinh nghiệm làm việc
                                                 </strong>
                                             </div>
                                             <div class="box-body">
@@ -74,7 +74,7 @@
                                             <div class="box-title">
                                                 <strong>
                                                     <i class="fa fa-id-card margin-r-5"></i>
-                                                    Apply Job
+                                                    Ứng tuyển công việc
                                                 </strong>
                                             </div>
                                             <div class="box-body">

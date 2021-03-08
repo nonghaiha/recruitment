@@ -27,11 +27,9 @@ class JobController extends Controller
 
     public function search(Request $request)
     {
-        if ($request->search) {
-            $data = $this->categoryService->find($request->search);
-            if ($data){
-                return view('Client::job.search',['data' => $data]);
-            }
+        if ($request->category || $request->location) {
+            $data = $this->jobService->findByKeyWord($request);
+            return view('Client::job.search',['data' => $data]);
         }
         return false;
     }

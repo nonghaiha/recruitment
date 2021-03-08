@@ -35,4 +35,9 @@ class HomeController extends Controller
     {
         return view('Client::list-question');
     }
+
+    public function aboutUs()
+    {
+        return view('Client::about-us');
+    }
 }
