@@ -50,7 +50,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="screen-pc">
                     <div class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-8 ant-col-lg-8">
                         <div class="box-bottom">
                             <div class="title">VÌ SAO NÊN CHỌN 30SHINE</div>
@@ -145,7 +144,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
