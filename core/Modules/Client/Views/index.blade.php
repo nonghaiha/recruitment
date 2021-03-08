@@ -278,7 +278,10 @@
                                             <div
                                                 class="ant-col ant-col-xs-14 ant-col-sm-14 ant-col-md-17 ant-col-lg-17">
                                                 <div class="content">
-                                                    <div class="title-blog"><span>{{$item['title']}}</span>
+                                                    <div class="title-blog">
+                                                        <a href="{{route('client.news.detail',['id' => $item['id']])}}" class="blank">
+                                                            <span>{{$item['title']}}</span>
+                                                        </a>
                                                     </div>
                                                     <div class="text description">
                                                         <a href="{{route('client.news.detail',['id' => $item['id']])}}" class="blank">

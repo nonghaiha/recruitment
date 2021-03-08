@@ -26,7 +26,7 @@ Class ServiceProvider extends SupportServiceProvider
      *
      * @return void
      */
-    public function boot(Router $route)
+    public function boot(Router $router)
     {
         // SPECIFIED KEY WAS TOO LONG ERROR OLD MYSQL SERVER
         Schema::defaultStringLength(191);

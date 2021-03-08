@@ -88,9 +88,9 @@
                                                     <i class="fa fa-id-card margin-r-5"></i>
                                                     CV
                                                 </strong>
-                                            </div>
-                                            <div class="box-body">
-                                                <iframe src="{{$data['jd'] != null ? $data['jd'] : ''}}" frameborder="0"></iframe>
+                                                <div class="box-body">
+                                                    <iframe src="{{cxl_storage_client('pdf').'/'.$data['cv']}}" frameborder="100" width="1200px" height="500px"></iframe>
+                                                </div>
                                             </div>
                                         </div>
                                         <hr>

@@ -16,6 +16,14 @@
                         {!! $data['description'] !!}
                     </div>
                 </div>
+                @if($data['jd'] != null)
+                    <div class="content-article">
+                        <h2>Thông tin chi tiết</h2>
+                        <div class="detail-article">
+                            <a href="{{cxl_storage_admin('pdf'). '/' . $data['jd']}}" target="_blank">{{$data['jd']}}</a>
+                        </div>
+                    </div>
+                @endif
 
                 <div class="list-related" id="related">
                     <div class="name">Vị trí cùng khác tại TheCoffeeHouse</div>
